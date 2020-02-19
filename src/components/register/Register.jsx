@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getRegister } from '../services/api';
+import { getRegister } from '../../services/api';
 
 
 

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import Register from './components/Register';
-import Login from './components/Login';
-import ListAds from './components/ListAds'
+import Register from '../src/components/register/Register'
+import Login from '../src/components/login/Login';
+import ListAds from '../src/components/listAds/ListAds'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends Component {

@@ -17,7 +17,21 @@ export const getLogin = async (name, pass) => {
     return await axios.post(`${URL}apiv1/login`, {
         username: name,
         password: pass
-    }).then(response => {
+    }, { withCredentials: true })
+        .then(response => {
+            console.log(response);
+            return response;
+        }).catch(error => {
+            console.log(error);
+            //  return error;
+        });
+};
+
+export const getAds = async () => {
+    return await axios.get(`${URL}apiv1/anuncios`, {
+        withCredentials: true
+    }
+    ).then(response => {
         return response;
     }).catch(error => {
         console.log(error);
@@ -25,5 +39,5 @@ export const getLogin = async (name, pass) => {
     });
 };
 
-export default { getRegister, getLogin };
+export default { getRegister, getLogin, getAds };
 

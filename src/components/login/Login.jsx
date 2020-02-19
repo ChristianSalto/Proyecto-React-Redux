@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { getLogin } from '../services/api';
-import Cookies from 'js-cookie'
+import { getLogin } from '../../services/api';
+//import Cookies from 'js-cookie'
+//import ListAds from '../listAds/ListAds'
+
 
 class Login extends Component {
     constructor(props) {
@@ -15,11 +17,13 @@ class Login extends Component {
     handleLogin = async (event) => {
         event.preventDefault();
         const { username, password } = event.target;
-        const { data } = await getLogin(username.value, password.value);
+        const { data, request } = await getLogin(username.value, password.value);
+      
+        console.log(request.response);
+       
         if (data.success) {
-            Cookies.set('success', data.success);
             this.setState({ success: data.success });
-            console.log(data.success);
+            //console.log(data.success);
             this.props.history.push('/listAds');
         } else {
             this.setState({ error: "This user is alredy registered" });
