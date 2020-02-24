@@ -8,8 +8,10 @@ export const getRegister = async (name, pass) => {
     }).then(response => {
         return response;
     }).catch(error => {
-        console.log(error);
-        //  return error;
+        // console.log(error.response.data);
+        const data = error.response
+       // console.log(data)
+        return data;
     });
 };
 
@@ -22,20 +24,34 @@ export const getLogin = async (name, pass) => {
             console.log(response);
             return response;
         }).catch(error => {
-            console.log(error);
-            //  return error;
+            const data = error.response
+            console.log(data)
+            return data;
         });
 };
 
 export const getAds = async () => {
-    return await axios.get(`${URL}apiv1/anuncios`, {
+    return await axios.get(`${URL}apiv1/anuncios?limit=10`, {
         withCredentials: true
     }
     ).then(response => {
         return response;
     }).catch(error => {
-        console.log(error);
-        //  return error;
+        console.log(error)
+        return error;
+    });
+};
+
+export const filterAds = async (params) => {
+    return await axios.get(`${URL}apiv1/anuncios?limit=10`, {
+        withCredentials: true,
+        params: params
+    }
+    ).then(response => {
+        return response;
+    }).catch(error => {
+        console.log(error)
+        return error;
     });
 };
 
