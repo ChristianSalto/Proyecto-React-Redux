@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom';
 import { getLogin } from '../../services/api';
 import { Button, Layout, Input, FieldContainer, FieldTitle, FieldError } from '../register/StyleRegister';
 
-//import { Redirect } from 'react-router';
-//import Cookies from 'js-cookie'
-//import ListAds from '../listAds/ListAds'
-
 
 class Login extends Component {
     constructor(props) {
@@ -17,14 +13,14 @@ class Login extends Component {
         }
     }
 
+
     handleLogin = async (event) => {
         event.preventDefault();
         const { username, password } = event.target;
         const { data } = await getLogin(username.value, password.value);
-
+        sessionStorage.setItem("success", data.success);
         if (data.success) {
             this.setState({ success: data.success });
-            //console.log(data.success);
             this.props.history.push('/listAds');
         } else {
             this.setState({ error: "Sorry, but this user doesn't exist" });
@@ -33,16 +29,6 @@ class Login extends Component {
     }
 
     render() {
-
-        // try {
-        //     // const { state } = this.props.location.state;
-        //    if (this.state.success === false) {
-        //         return <Redirect to="/" />
-        //     }
-        // } catch (e) {
-        //     <button type="button" onClick={window.alert("Por favor antes deberas pasar por el registro.Gracias")}>Aceptar</button>
-        //     return <Redirect to="/" />
-        // }
         return (
             <Layout>
                 <form onSubmit={this.handleLogin} className="login-container">

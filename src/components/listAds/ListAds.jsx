@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { getAds, filterAds } from '../../services/api';
 import Cards from '../listAds/Cards';
-import { Nav, InputNav, LogOut, Search, AsideRight, AsideContainer } from './StyleListAds';
+import { Nav, InputNav, LogOut, Search, AsideRight, AsideContainer, DivContainerHome, TitleNav } from './StyleListAds';
 import { Link } from 'react-router-dom';
 import CompAsideLeft from '../asideLeft/CompAsideLeft'
 
@@ -80,15 +80,20 @@ class ListAds extends Component {
         console.log(this.state.limit);
     }
 
+    clearCookies = () => {
+        sessionStorage.removeItem("success");
+    }
+
 
     render() {
 
         return (
-            <div>
+            <DivContainerHome>
                 <Nav>
                     <Link to="/login">
-                        <LogOut type="button">Log out</LogOut>
+                        <LogOut onClick={this.clearCookies} type="button">Log out</LogOut>
                     </Link>
+                    <TitleNav>YOU ARE WELCOME TO NODE-POP</TitleNav>
                     <InputNav type="text" onChange={this.updateInputValue} required />
                     <Search onClick={this.handleFilter}> Search </Search>
                 </Nav>
@@ -100,7 +105,7 @@ class ListAds extends Component {
                         <h1>{this.state.msj}</h1>
                     </AsideRight>
                 </AsideContainer>
-            </div>
+            </DivContainerHome>
         )
     }
 }

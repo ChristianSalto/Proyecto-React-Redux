@@ -1,5 +1,5 @@
 import axios from 'axios';
-const URL = 'http://34.89.93.186:8080/'
+const URL = 'http://34.89.93.186:8080/';
 
 export const getRegister = async (name, pass) => {
     return await axios.post(`${URL}apiv1/register`, {
@@ -21,7 +21,6 @@ export const getLogin = async (name, pass) => {
         password: pass
     }, { withCredentials: true })
         .then(response => {
-            console.log(response);
             return response;
         }).catch(error => {
             const data = error.response
@@ -31,13 +30,25 @@ export const getLogin = async (name, pass) => {
 };
 
 export const getAds = async () => {
-    return await axios.get(`${URL}apiv1/anuncios?limit=10`, {
+    return await axios.get(`${URL}apiv1/anuncios?limit=4`, {
         withCredentials: true
     }
     ).then(response => {
         return response;
     }).catch(error => {
-        console.log(error)
+        console.log(error);
+        return error;
+    });
+};
+
+export const getAllAds = async () => {
+    return await axios.get(`${URL}apiv1/anuncios?`, {
+        withCredentials: true
+    }
+    ).then(response => {
+        return response;
+    }).catch(error => {
+        console.log(error);
         return error;
     });
 };
@@ -61,16 +72,16 @@ export const filterAds = async (params, number) => {
 
 export const editAds = async (params) => {
     debugger
-    return await axios.put(`${URL}apiv1/anuncios?id=<%20ID%20de%20MongoDB%20>`, {
-        withCredentials: true,
-        params: params
+    return await axios.post(`${URL}apiv1/anuncios?`, params, {
+        withCredentials: true
     }
     ).then(response => {
         return response;
     }).catch(error => {
+        console.log(error);
         return error;
     });
 }
 
-export default { getRegister, getLogin, getAds };
+export default { getRegister, getLogin, getAds, editAds };
 

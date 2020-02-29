@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { getAds } from '../../services/api';
+import { getAllAds } from '../../services/api';
 import { Card } from '../listAds/Cards';
 import { Link } from 'react-router-dom';
 
@@ -13,7 +13,7 @@ class Details extends Component {
 
     componentWillMount = async () => {
         const idCards = this.props.location.props;
-        const { data } = await getAds();
+        const { data } = await getAllAds();
         const { results } = data;
         results.map((item) => {
             if (item._id === idCards) {
@@ -37,7 +37,7 @@ class Details extends Component {
                 </Fragment>
             )
         } else {
-            return (<h1></h1>);
+            return (<Fragment></Fragment>);
         }
     }
 }

@@ -6,15 +6,25 @@ import { Link } from 'react-router-dom';
 
 
 function Cards(props) {
+    const changeStatus = (event) => {
+        const id = event.target.value;
+        props.data.map((ads) => {
+            if (ads._id === id) {
+                ads.type === "buy" ? ads.type = "sold" : ads.type = "sell";
+                event.target.innerText = ads.type;
+            }
+        });
+    }
+
     return (
         <Fragment>
             {
                 props.data.map((ads) => {
                     return (
-                        <DivContainer>
+                        <DivContainer key={ads._id}>
                             <HeaderCards>{ads.name}</HeaderCards>
                             <div><Img src={ads.photo === "photo" ? Photo : ads.photo} alt="..." /></div>
-                            <Tags>{ads.tags === undefined ? "" : ads.tags.map((item) => { return item }).join(",")}ñsoidfhñsdhgñsdhfgkñjsdfhglkjsfhgkjshñfkj</Tags>
+                            <Tags>{ads.tags === undefined ? "" : ads.tags.map((item) => { return item }).join(",")}</Tags>
                             <Date>
                                 <span>{ads.createdAt}</span>
                                 <span>{ads.updatedAt}</span>
@@ -27,7 +37,7 @@ function Cards(props) {
                                     <ButtonDetails>Details</ButtonDetails>
                                 </Link>
                                 <span>{ads.price} $</span>
-                                <ButtonBuy>{ads.type}</ButtonBuy>
+                                <ButtonBuy onClick={changeStatus} value={ads._id}>{ads.type}</ButtonBuy>
                             </ContainerPrice>
                         </DivContainer>
                     )
@@ -46,10 +56,10 @@ export function Card(props) {
             {
                 data.map((ad) => {
                     return (
-                        <DivContainer>
+                        <DivContainer key={ad._id}>
                             <HeaderCards>{ad.name}</HeaderCards>
                             <div><Img src={ad.photo === "photo" ? Photo : ad.photo} alt="..." /></div>
-                            <Tags>{ad.tags === undefined ? "" : ad.tags.map((item) => { return item }).join(",")}ñsoidfhñsdhgñsdhfgkñjsdfhglkjsfhgkjshñfkj</Tags>
+                            <Tags>{ad.tags === undefined ? "" : ad.tags.map((item) => { return item }).join(",")}</Tags>
                             <Date>
                                 <span>{ad.createdAt}</span>
                                 <span>{ad.updatedAt}</span>

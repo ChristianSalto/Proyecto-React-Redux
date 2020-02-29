@@ -2,34 +2,35 @@ import styled from 'styled-components';
 
 export const DivContainer = styled.div`
   justify-content: center;
-  border: 1px solid black;
+  border: 3px solid gray;
+  border-styled: groove;
   display: inline-block;
   flex-wrap: wrap;
   width: 300px;
   height: 450px;
   margin: 10px;
   padding:5px;
+  border-radius: 10px;
+  background: rgb(222, 191, 228);
 `;
 
 export const Img = styled.img`
   width: 100%;
   height: 200px;
   margin-top: 10px;
-  border: 1px solid black;
 `;
 
 
 export const HeaderCards = styled.header`
-border: 1px solid black;
   text-align: center;
-  color: #002999;
+  color: #066A62;
   padding: 10px;
   font-size: 20px;
-`
+`;
 export const Tags = styled.div`
   word-break: break-all;
   word-wrap: break-word;
-  border: 1px solid black;
+  background:#6E4D3D;
   color:#8598CC;
   padding: 10px;
 `;
@@ -37,7 +38,8 @@ export const Tags = styled.div`
 export const ContainerPrice = styled.div`
   display: flex;
   justify-content: space-between;
-  border: 1px solid black; 
+  flex-wrap: wrap;
+  margin-top:2%;
   padding: 10px;
   hieght: 30px;
   span{
@@ -45,10 +47,11 @@ export const ContainerPrice = styled.div`
   };
   button{
     cursor: pointer;
+    outline:none;
   };
 
   button:hover{
-    background:blue;
+    background:#51918C;
     color:white;
   }
 `;
@@ -66,7 +69,7 @@ export const ButtonDetails = styled.button`
 `;
 
 export const Date = styled.div`
-   border: 1px solid black;
+   background: #BA8B7B;
    margin-top: 10px;
-   padding:5px;
+   padding: 5px;
 `;
