@@ -6,6 +6,7 @@ flex-wrap: wrap;
 justify-content: center;
 padding:10px;
 margin: 50px;
+max-height: 1000px;
 label{
     display: block;
     padding: 5px;

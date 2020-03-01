@@ -1,15 +1,11 @@
 import React, { Component } from 'react'
 import { AsideLeft, Checkbox, Checkboxlabel, DivContainerFields, DivContainerPrice, LinkCreateAds } from './StyleAsideLeft';
 import { Link } from 'react-router-dom';
-import CreateAds from '../createAds/CreateAds';
+
 
 class CompAsideLeft extends Component {
     constructor(props) {
         super(props);
-    }
-
-    handleLink = () => {
-        <CreateAds />
     }
 
     render() {
@@ -38,10 +34,13 @@ class CompAsideLeft extends Component {
                         <option value="updatedAt">UpdatedAt</option>
                     </select>
                     <label htmlFor="limit">Limit</label>
-                    <input name="limit" type="number" min="1" max="50" onChange={this.props.limit} />
+                    <input name="limit" type="number" min="6" max="20" onChange={this.props.limit} />
+                    <Link to="/seeAllAds">
+                        <h4>You can see all the ads here !!!</h4>
+                    </Link>
                 </DivContainerFields>
                 <LinkCreateAds>
-                    <Link to="/edit" onClick={this.handleLink}>
+                    <Link to="/edit">
                         <h4>You can create your ads</h4>
                     </Link>
                 </LinkCreateAds>

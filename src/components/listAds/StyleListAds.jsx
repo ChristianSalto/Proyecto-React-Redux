@@ -51,6 +51,7 @@ export const InputNav = styled.input`
   `;
 
 export const LogOut = styled.button`
+  outline:none;
   border: 1px solid transparent;
   padding:5px;
   cursor: pointer;

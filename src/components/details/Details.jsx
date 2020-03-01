@@ -34,6 +34,9 @@ class Details extends Component {
                     <Link to="/listAds">
                         <h4>Home</h4>
                     </Link>
+                    <Link to="/seeAllAds">
+                        <h4>Go to see all ads</h4>
+                    </Link>
                 </Fragment>
             )
         } else {

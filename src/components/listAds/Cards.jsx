@@ -24,7 +24,7 @@ function Cards(props) {
                         <DivContainer key={ads._id}>
                             <HeaderCards>{ads.name}</HeaderCards>
                             <div><Img src={ads.photo === "photo" ? Photo : ads.photo} alt="..." /></div>
-                            <Tags>{ads.tags === undefined ? "" : ads.tags.map((item) => { return item }).join(",")}</Tags>
+                            <Tags>{ads.tags === undefined || ads.tags === null ? "" : ads.tags.map((item) => { return item }).join(",")}</Tags>
                             <Date>
                                 <span>{ads.createdAt}</span>
                                 <span>{ads.updatedAt}</span>
@@ -59,7 +59,7 @@ export function Card(props) {
                         <DivContainer key={ad._id}>
                             <HeaderCards>{ad.name}</HeaderCards>
                             <div><Img src={ad.photo === "photo" ? Photo : ad.photo} alt="..." /></div>
-                            <Tags>{ad.tags === undefined ? "" : ad.tags.map((item) => { return item }).join(",")}</Tags>
+                            <Tags>{ad.tags === undefined || ad.tags === null ? "" : ad.tags.map((item) => { return item }).join(",")}</Tags>
                             <Date>
                                 <span>{ad.createdAt}</span>
                                 <span>{ad.updatedAt}</span>

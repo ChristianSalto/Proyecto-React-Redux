@@ -12,9 +12,10 @@ class ListAds extends Component {
         this.state = {
             result: [{}],
             isChecked: true,
-            price: 0,
-            limit: 1,
-            msj: ""
+            price: "0",
+            limit: 6,
+            msj: "",
+            stateAvanced: true
         }
     }
 
@@ -32,10 +33,9 @@ class ListAds extends Component {
     }
 
     handleFilter = async () => {
-        const { name } = this.state
+        const { name } = this.state;
         const { data } = await filterAds({ name: name }, this.state.limit);
         const { results } = data;
-        //console.log(results)
         if (results.length === 0) {
             const { data } = await filterAds({ tag: name }, this.state.limit);
             const { results } = data;
@@ -49,6 +49,7 @@ class ListAds extends Component {
         }
     }
 
+
     updateInputValue = event => {
         this.setState({
             name: event.target.value
@@ -59,29 +60,30 @@ class ListAds extends Component {
         this.setState({ isChecked: !this.state.isChecked });
         const { data } = await filterAds({ venta: this.state.isChecked }, this.state.limit);
         const { results } = data;
-        console.log(results);
         this.setState({ result: results, msj: "" });
     }
 
     handleChangePrice = async (event) => {
         const { value } = event.target;
-        console.log(value);
+        value.toString();
         this.setState({ price: value });
-        const { data } = await filterAds({ price: 1 - value }, this.state.limit);
+        const { data } = await filterAds({ price: `1 - ${value}` }, this.state.limit);
         const { results } = data;
-        console.log(results);
         this.setState({ result: results, msj: "" });
+
     }
 
     showMeLimitCards = (event) => {
         const { value } = event.target;
-        console.log(value);
         this.setState({ limit: value, msj: "" });
-        console.log(this.state.limit);
     }
 
     clearCookies = () => {
         sessionStorage.removeItem("success");
+    }
+
+    handleKeyUp = (event) => {
+        if (event.keyCode === 13) this.handleFilter();
     }
 
 
@@ -94,7 +96,7 @@ class ListAds extends Component {
                         <LogOut onClick={this.clearCookies} type="button">Log out</LogOut>
                     </Link>
                     <TitleNav>YOU ARE WELCOME TO NODE-POP</TitleNav>
-                    <InputNav type="text" onChange={this.updateInputValue} required />
+                    <InputNav type="text" onChange={this.updateInputValue} onKeyUp={this.handleKeyUp} required />
                     <Search onClick={this.handleFilter}> Search </Search>
                 </Nav>
                 <AsideContainer>

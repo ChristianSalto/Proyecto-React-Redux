@@ -8,9 +8,7 @@ export const getRegister = async (name, pass) => {
     }).then(response => {
         return response;
     }).catch(error => {
-        // console.log(error.response.data);
         const data = error.response
-        // console.log(data)
         return data;
     });
 };
@@ -24,13 +22,12 @@ export const getLogin = async (name, pass) => {
             return response;
         }).catch(error => {
             const data = error.response
-            console.log(data)
             return data;
         });
 };
 
 export const getAds = async () => {
-    return await axios.get(`${URL}apiv1/anuncios?limit=4`, {
+    return await axios.get(`${URL}apiv1/anuncios?limit=6`, {
         withCredentials: true
     }
     ).then(response => {
@@ -70,8 +67,24 @@ export const filterAds = async (params, number) => {
 };
 
 
+// export const filterAdsAdvanced = async (params) => {
+//     return await axios.get(`${URL}apiv1/anuncios?`, {
+//         withCredentials: true,
+//         params: params
+//     }
+//     ).then(response => {
+//         return response;
+//     }).catch(error => {
+//         if (error.response.status === 422) {
+//             return getAllAds();
+//         } else {
+//             return error;
+//         }
+//     });
+// };
+
+
 export const editAds = async (params) => {
-    debugger
     return await axios.post(`${URL}apiv1/anuncios?`, params, {
         withCredentials: true
     }
