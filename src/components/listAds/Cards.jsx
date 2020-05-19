@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, { Fragment } from 'react';
 import { DivContainer, Img, Date, HeaderCards, Tags, ContainerPrice, ButtonDetails, ButtonBuy } from './StyleCards'
 import Photo from '../../img/no-photo.jpg';

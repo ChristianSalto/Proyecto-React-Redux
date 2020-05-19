@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, { Component } from 'react';
 import { editAds } from '../../services/api';
 import { DivContainerForm, DivContainerCreateAds } from '../createAds/StyledCreateAds';

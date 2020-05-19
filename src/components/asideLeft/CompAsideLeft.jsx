@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { AsideLeft, Checkbox, Checkboxlabel, DivContainerFields, DivContainerPrice, LinkCreateAds } from './StyleAsideLeft';
 import { Link } from 'react-router-dom';
-
+/* eslint-disable */
 
 class CompAsideLeft extends Component {
     constructor(props) {

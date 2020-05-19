@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, { Component, Fragment } from 'react';
 import { getAllAds } from '../../services/api';
 import { Card } from '../listAds/Cards';

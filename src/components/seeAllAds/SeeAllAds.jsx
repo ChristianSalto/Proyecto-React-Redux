@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, { Component } from 'react';
 import { getAllAds, filterAdsAdvanced } from '../../services/api';
 import Cards from '../listAds/Cards';
