@@ -5,7 +5,7 @@ import { Route, Redirect } from 'react-router-dom';
 const PrivateRoute = ({ component: Component, ...rest }) => {
     return (
         <Route {...rest} render={props => (
-            sessionStorage.getItem("success") ? <Component {...props} /> : <Redirect to="/login" />
+            localStorage.getItem("success") ? <Component {...props} /> : <Redirect to="/login" />
         )} />
     );
 };

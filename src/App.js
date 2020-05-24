@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Register from '../src/components/register/Register'
-import Login from '../src/components/login/Login';
+import Register from './components/Register';
+import Login from './components/Login';
 import ListAds from '../src/components/listAds/ListAds';
 import Details from '../src/components/details/Details';
 import CreateAds from '../src/components/createAds/CreateAds';

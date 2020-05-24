@@ -1,31 +1,32 @@
 import React, { Component } from 'react';
+
+//import React from 'react';
+
 import { Link } from 'react-router-dom';
-import { getLogin } from '../../services/api';
-import { Button, Layout, Input, FieldContainer, FieldTitle, FieldError } from '../register/StyleRegister';
+//import { getLogin } from '../../services/api';
+
+import { selectHandleLogin } from '../../store/selectors'
+import { Button, Layout, Input, FieldContainer, FieldTitle, FieldError } from '../Register/StyleRegister';
+
 
 
 class Login extends Component {
+    //const { registered, msj } = location.state;
+    //console.log(registered, msj)
     constructor(props) {
         super(props);
         this.state = {
-            success: false,
             error: ""
         }
     }
 
 
     handleLogin = async (event) => {
-        event.preventDefault();
-        const { username, password } = event.target;
-        const { data } = await getLogin(username.value, password.value);
-        sessionStorage.setItem("success", data.success);
-        if (data.success) {
-            this.setState({ success: data.success });
-            this.props.history.push('/listAds');
-        } else {
-            this.setState({ error: "Sorry, but this user doesn't exist" });
-            setTimeout(() => this.setState({ error: "" }), 5000);
-        }
+        const { user, userSession, history, fetchSuccess } = this.props;
+        const data = await selectHandleLogin(fetchSuccess, userSession, user, event, history);
+        this.setState({ error: data });
+        setTimeout(() => this.setState({ error: "" }), 5000);
+
     }
 
     render() {
