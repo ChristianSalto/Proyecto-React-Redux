@@ -16,8 +16,21 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            error: ""
+            error: "",
+            username: ""
         }
+    }
+
+    componentDidMount() {
+        this.props.loadSession();
+        const user = localStorage.getItem("user");
+        if (user === null) return
+        const { username } = JSON.parse(user);
+        username ? this.setState({
+            username: username
+        }) : this.setState({
+            username: "",
+        })
     }
 
 
@@ -36,7 +49,12 @@ class Login extends Component {
                     <FieldTitle className="login-title"><h1>Login</h1></FieldTitle>
                     <FieldContainer className="input-login">
                         <label htmlFor="username">Username</label>
-                        <Input type="text" name="username" className="login-input" placeholder="Username" required />
+                        <Input type="text"
+                            name="username"
+                            className="login-input"
+                            placeholder="Username"
+                            defaultValue={this.state.username}
+                            required />
                     </FieldContainer>
 
                     <FieldContainer className="input-login">

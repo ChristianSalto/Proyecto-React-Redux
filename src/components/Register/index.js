@@ -3,13 +3,14 @@ import { connect } from 'react-redux';
 import Register from './Register';
 //import { getStateUser } from '../../store/selectors';
 
-import { userSession } from '../../store/action';
+import { userSession, loadSession } from '../../store/action';
 
 
 
 function mapDispatchToProps(dispatch, ownProps) {
     return {
         userSession: (user) => dispatch(userSession(user)),
+        loadSession: () => loadSession(dispatch),
     }
 }
 

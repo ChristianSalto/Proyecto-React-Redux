@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import { getAllAds, filterAdsAdvanced } from '../../services/api';
-import Cards from '../listAds/Cards';
+import Cards from '../ListAds/Cards';
 import { Link } from 'react-router-dom';
 import { DivContainerAllAds, DivHome, DivRanger } from '../seeAllAds/styledSeeAllAds';
 // import { Nav, InputNav, Search } from '../listAds/StyleListAds';

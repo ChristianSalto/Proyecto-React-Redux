@@ -16,17 +16,20 @@ export const selectHandleLogin = async (fetchSuccess, userSession, user, event, 
     event.preventDefault();
     const { username, password } = event.target;
     const { data } = await getLogin(username.value, password.value);
-    if (user.length === 0 && data.success) {
+    if (data.success) {
         user = saveUser(username.value, data.success);
         userSession(user);
         localStorage.setItem("user", JSON.stringify(user));
         localStorage.setItem("success", data.success)
         fetchSuccess(data.success);
         history.push('/listAds');
-    } else if (data.success) {
-        localStorage.setItem("success", data.success)
-        fetchSuccess(data.success);
-        history.push('/listAds');
+        // } else if (data.success) {
+        //     user = saveUser(username.value, data.success);
+        //     userSession(user);
+        //     localStorage.setItem("user", JSON.stringify(user));
+        //     localStorage.setItem("success", data.success)
+        //     fetchSuccess(data.success);
+        //     history.push('/listAds');
     } else {
         return data.error
     }

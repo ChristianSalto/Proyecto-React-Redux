@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getAds, filterAds } from '../../services/api';
-import Cards from '../listAds/Cards';
+import Cards from './Cards';
 import { Nav, InputNav, LogOut, Search, AsideRight, AsideContainer, DivContainerHome, TitleNav } from './StyleListAds';
 import { Link } from 'react-router-dom';
 import CompAsideLeft from '../asideLeft/CompAsideLeft'
@@ -20,6 +20,7 @@ class ListAds extends Component {
     }
 
     componentDidMount = async () => {
+        this.props.fetchAds();
         const { data } = await getAds();
         const { results } = data;
         this.setState({ result: results });
@@ -79,7 +80,7 @@ class ListAds extends Component {
     }
 
     clearCookies = () => {
-        sessionStorage.removeItem("success");
+        localStorage.removeItem("success");
     }
 
     handleKeyUp = (event) => {

@@ -15,9 +15,10 @@ class Register extends Component {
     }
 
     componentDidMount() {
-        const { userSession } = this.props
-        const user = localStorage.getItem("user");
-        user !== null ? userSession(JSON.parse(user)) : user;
+        this.props.loadSession();
+        // const { userSession } = this.props
+        // const user = localStorage.getItem("user");
+        // user !== null ? userSession(JSON.parse(user)) : user;
     }
 
     handleRegister = async (event) => {

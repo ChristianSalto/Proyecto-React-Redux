@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Login from './Login';
 
 import { getStateUser } from '../../store/selectors';
-import { userSession, fetchSuccess } from '../../store/action';
+import { userSession, fetchSuccess, loadSession } from '../../store/action';
 
 function mapStateToProps(state, ownProps) {
     return {
@@ -15,6 +15,7 @@ function mapDispatchToProps(dispatch, ownProps) {
     return {
         userSession: (user) => dispatch(userSession(user)),
         fetchSuccess: (data) => dispatch(fetchSuccess(data)),
+        loadSession: () => loadSession(dispatch),
     }
 }
 
