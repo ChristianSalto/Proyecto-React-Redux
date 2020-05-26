@@ -5,6 +5,7 @@ const initialState = {
     ads: [],
     ui: {
         success: false,
+        error: "",
     }
 };
 
@@ -28,6 +29,12 @@ export function ads(state = initialState.ads, action) {
                 ads: action.ads,
             }
 
+        case TYPES.MSJ_ADS:
+            return {
+                ...state,
+                msj: action.msj
+            }
+
         default:
             return state
     }
@@ -48,12 +55,14 @@ export function ui(state = initialState.ui, action) {
             return {
                 ...state,
                 success: action.success,
+                error: "",
             }
 
-        // case TYPES.FETCH_REGISTER_SUCCESS:
-        //     return {
-        //         ...state,
-        //     }
+        case TYPES.FETCH_FAILURE:
+            return {
+                ...state,
+                error: action.error
+            }
 
         default:
             return state

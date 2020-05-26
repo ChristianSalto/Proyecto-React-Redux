@@ -3,7 +3,7 @@ import './App.css';
 import Register from './components/Register';
 import Login from './components/Login';
 import ListAds from './components/ListAds';
-import Details from '../src/components/details/Details';
+import Details from './components/Details';
 import CreateAds from '../src/components/createAds/CreateAds';
 import SeeAllAds from '../src/components/seeAllAds/SeeAllAds'
 import PrivateRoute from '../src/privateRoute/PrivateRoute';

@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 //import { getLogin } from '../../services/api';
 
-import { selectHandleLogin } from '../../store/selectors'
+//import { selectHandleLogin } from '../../store/selectors'
 import { Button, Layout, Input, FieldContainer, FieldTitle, FieldError } from '../Register/StyleRegister';
 
 
@@ -35,10 +35,14 @@ class Login extends Component {
 
 
     handleLogin = async (event) => {
-        const { user, userSession, history, fetchSuccess } = this.props;
-        const data = await selectHandleLogin(fetchSuccess, userSession, user, event, history);
-        this.setState({ error: data });
-        setTimeout(() => this.setState({ error: "" }), 5000);
+        event.preventDefault();
+        const { username, password } = event.target;
+        const { loadLogin } = this.props;
+        const data = await loadLogin(username.value, password.value);
+        if (data) {
+            this.setState({ error: data });
+            setTimeout(() => this.setState({ error: "" }), 5000);
+        }
 
     }
 

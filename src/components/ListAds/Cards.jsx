@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 function Cards(props) {
     const changeStatus = (event) => {
         const id = event.target.value;
-        props.data.map((ads) => {
+        props.ads.map((ads) => {
             if (ads._id === id) {
                 ads.type === "buy" ? ads.type = "sold" : ads.type = "sell";
                 event.target.innerText = ads.type;
@@ -21,7 +21,7 @@ function Cards(props) {
     return (
         <Fragment>
             {
-                props.data.map((ads) => {
+                props.ads.map((ads) => {
                     return (
                         <DivContainer key={ads._id}>
                             <HeaderCards>{ads.name}</HeaderCards>

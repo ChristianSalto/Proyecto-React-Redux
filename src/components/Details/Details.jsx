@@ -2,7 +2,7 @@
 
 import React, { Component, Fragment } from 'react';
 import { getAllAds } from '../../services/api';
-import { Card } from '../ListAds';
+import { Card } from '../ListAds/Cards';
 import { Link } from 'react-router-dom';
 
 class Details extends Component {
@@ -46,4 +46,5 @@ class Details extends Component {
         }
     }
 }
+
 export default Details;

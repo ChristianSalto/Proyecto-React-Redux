@@ -14,7 +14,7 @@ class CompAsideLeft extends Component {
                 <DivContainerPrice>
                     <div>
                         <label htmlFor="price"><h2>For prices</h2></label>
-                        <div> <input type="range" min="0" max="100" name="price" onChange={this.props.data} /></div>
+                        <div> <input type="range" min="0" max="1000" name="price" onChange={this.props.data} /></div>
                         <span>{this.props.price} $</span>
                     </div>
                     <div>
@@ -34,7 +34,7 @@ class CompAsideLeft extends Component {
                         <option value="updatedAt">UpdatedAt</option>
                     </select>
                     <label htmlFor="limit">Limit</label>
-                    <input name="limit" type="number" min="6" max="20" onChange={this.props.limit} />
+                    <input name="limit" type="number" min="1" max="20" onChange={this.props.limit} />
                     <Link to="/seeAllAds">
                         <h4>You can see all the ads here !!!</h4>
                     </Link>

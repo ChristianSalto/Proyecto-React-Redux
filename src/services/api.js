@@ -26,8 +26,8 @@ export const getLogin = async (name, pass) => {
         });
 };
 
-export const getAds = async () => {
-    return await axios.get(`${URL}apiv1/anuncios?limit=6`, {
+export const getAds = async (limit) => {
+    return await axios.get(`${URL}apiv1/anuncios?limit=${limit}`, {
         withCredentials: true
     }
     ).then(response => {

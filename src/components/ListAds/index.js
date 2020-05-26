@@ -1,15 +1,30 @@
 import { connect } from 'react-redux';
 
 import ListAds from './ListAds';
-import { fetchAds } from '../../store/action';
+import { getAdvert, filterAdvert, loadSession, handleSearch } from '../../store/action';
+import { getStateAds, getStateUser, getLimit } from '../../store/selectors';
 
-function mapDispatchToProps(dispatch, ownProps) {
+
+function mapStateToProps(state, ownProps) {
     return {
-        fetchAds: () => fetchAds(dispatch),
+        getStateAds: getStateAds(state),
+        getStateUser: getStateUser(state),
+        getLimit: getLimit(),
     }
 }
 
-const connected = connect(null, mapDispatchToProps);
+function mapDispatchToProps(dispatch, ownProps) {
+    return {
+        fetchAds: (getLimit) => getAdvert(dispatch, getLimit),
+        filterAdvert: (field, limit) => filterAdvert(dispatch, field, limit),
+        loadSession: () => loadSession(dispatch),
+        handleSearch: (name, limit) => handleSearch(dispatch, name, limit),
+    }
+}
+
+
+
+const connected = connect(mapStateToProps, mapDispatchToProps);
 const ListAdsConnected = connected(ListAds);
 
 
