@@ -1,27 +1,44 @@
 /* eslint-disable */
 
-import React, { Component } from 'react';
-import { getAllAds, filterAdsAdvanced } from '../../services/api';
+import React, { useEffect, useState } from 'react';
+import { getAllAds } from '../../services/api';
 import Cards from '../ListAds/Cards';
 import { Link } from 'react-router-dom';
-import { DivContainerAllAds, DivHome, DivRanger } from '../seeAllAds/styledSeeAllAds';
+import { DivContainerAllAds, DivHome, DivRanger } from './styledSeeAllAds';
 // import { Nav, InputNav, Search } from '../listAds/StyleListAds';
 
 
-class SeeAllAds extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            result: [{}],
-            price: "500"
-        }
-    }
+function SeeAllAds({ getStateAds, fetchAllAds }) {
+    const [ads, setAds] = useState(null);
 
-    componentWillMount = async () => {
-        const { data } = await getAllAds();
-        const { results } = data;
-        this.setState({ result: results });
-    }
+    // const state = () => getState;
+    // console.log(state);
+    // const { ads } = props.getAds;
+    // const [ads, setAds] = useState(ads);
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         result: [{}],
+    //         price: "500"
+    //     }
+    // }
+
+
+    useEffect(() => {
+        const getAds = async () => {
+            fetchAllAds();
+            getStateAds;
+            const { data } = await getAllAds();
+            const { results } = data;
+            setAds(results);
+        }
+
+        getAds();
+
+    }, []);
+
+
+
 
     // handleChangePrice = (event) => {
     //     const { value } = event.target;
@@ -47,14 +64,14 @@ class SeeAllAds extends Component {
     // }
 
 
-    render() {
-        return (
-            <DivContainerAllAds>
-                <DivHome>
-                        <Link to="/listAds">
-                            <h4>Home</h4>
-                        </Link>
-                    {/* <Nav>
+    // render() {
+    return (
+        <DivContainerAllAds>
+            <DivHome>
+                <Link to="/listAds">
+                    <h4>Home</h4>
+                </Link>
+                {/* <Nav>
                         <div>
                             <DivRanger> <input type="range" min="0" max="10000" name="price" onChange={this.handleChangePrice} /></DivRanger>
                             <span>{this.state.price} $</span>
@@ -62,12 +79,15 @@ class SeeAllAds extends Component {
                         <InputNav type="text" onChange={this.updateInputValue} onKeyUp={this.handleKeyUp} required />
                         <Search onClick={this.handleFilter}> Search </Search>
                     </Nav> */}
-                </DivHome>
-                <Cards data={this.state.result} />
-            </DivContainerAllAds>
-        )
-    }
+            </DivHome>
+            {ads !== null &&
+                <Cards ads={ads} />
+            }
+
+        </DivContainerAllAds>
+    );
 }
+// }
 
 
 export default SeeAllAds;

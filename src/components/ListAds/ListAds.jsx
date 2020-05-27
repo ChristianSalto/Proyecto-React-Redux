@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Cards from './Cards';
 import { Nav, InputNav, LogOut, Search, AsideRight, AsideContainer, DivContainerHome, TitleNav } from './StyleListAds';
 import { Link } from 'react-router-dom';
-import CompAsideLeft from '../asideLeft/CompAsideLeft'
+import CompAsideLeft from '../CompAsideLeft';
 
 
 class ListAds extends Component {

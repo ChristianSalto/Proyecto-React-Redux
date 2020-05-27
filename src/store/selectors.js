@@ -1,18 +1,18 @@
-import { getLogin } from '../services/api';
-//import Error from '../components/Error/Error';
+// import { initialState } from './reducers';
 
 export const getStateUser = state => state.user;
 export const getStateAds = state => state.ads;
+// export const getState = () => initialState;
 
 export const getLimit = () => 6;
 
 
 export const saveUser = (username, registered) => {
-    const user = {
-        username: username,
-        registered: registered,
-    };
-    return user;
+  const user = {
+    username: username,
+    registered: registered,
+  };
+  return user;
 }
 
 

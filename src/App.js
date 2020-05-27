@@ -5,7 +5,7 @@ import Login from './components/Login';
 import ListAds from './components/ListAds';
 import Details from './components/Details';
 import CreateAds from '../src/components/createAds/CreateAds';
-import SeeAllAds from '../src/components/seeAllAds/SeeAllAds'
+import SeeAllAds from './components/SeeAllAds';
 import PrivateRoute from '../src/privateRoute/PrivateRoute';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 

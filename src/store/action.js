@@ -17,9 +17,6 @@ export const fetchSuccess = (success) => ({
 })
 
 
-// export const fetchRegisterSuccess = () => ({
-//     type: TYPES.FETCH_REGISTER_SUCCESS,
-// });
 
 export const fetchAds = ads => ({
     type: TYPES.FETCH_ADS,
@@ -119,6 +116,13 @@ export const handleSearch = async (dispatch, name, limit) => {
 }
 
 
-export const handleAllAds = () => {
-    
+export const handleAllAds = async (dispatch) => {
+    dispatch(fetchRequest())
+    try {
+        const { data } = await getAllAds();
+        dispatch(fetchAds(data.results));
+        dispatch(fetchSuccess(data.success));
+    } catch (err) {
+        dispatch(fetchFailure(err));
+    }
 }

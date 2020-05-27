@@ -1,6 +1,6 @@
 import * as TYPES from './types';
 
-const initialState = {
+export const initialState = {
     user: [],
     ads: [],
     ui: {

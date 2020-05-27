@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 
 
 function Cards(props) {
+  
     const changeStatus = (event) => {
         const id = event.target.value;
         props.ads.map((ads) => {
