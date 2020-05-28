@@ -2,13 +2,13 @@
 
 import React, { Fragment } from 'react';
 import { DivContainer, Img, Date, HeaderCards, Tags, ContainerPrice, ButtonDetails, ButtonBuy } from './StyleCards'
-import Photo from '../../img/no-photo.jpg';
+import Photo from '../../../public/img/no-photo.jpg';
 import { Link } from 'react-router-dom';
 
 
 
 function Cards(props) {
-  
+
     const changeStatus = (event) => {
         const id = event.target.value;
         props.ads.map((ads) => {

@@ -1,5 +1,8 @@
+/* eslint-disable */
+
 import React, { Component } from 'react';
 //import { filterAds } from '../../services/api';
+import T from 'prop-types';
 import Cards from './Cards';
 import { Nav, InputNav, LogOut, Search, AsideRight, AsideContainer, DivContainerHome, TitleNav } from './StyleListAds';
 import { Link } from 'react-router-dom';
@@ -15,11 +18,11 @@ class ListAds extends Component {
             price: "0",
             //  limit: 6,
             // msj: "",
-            stateAvanced: true
+            // stateAvanced: true
         }
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         const { fetchAds, getStateUser, loadSession, getLimit } = this.props;
         fetchAds(getLimit);
         getStateUser;
@@ -137,11 +140,9 @@ class ListAds extends Component {
                     <CompAsideLeft data={this.handleChangePrice} price={this.state.price}
                         venta={this.handleChangeVenta} limit={this.showMeLimitCards} fields={this.showFields} />
                     <AsideRight>
-                        {ads ? (
+                        {ads && (
                             <Cards ads={ads} />
-                        ) : (
-                                <div></div>
-                            )}
+                        )}
                         <h1>{msj}</h1>
                     </AsideRight>
                 </AsideContainer>
@@ -151,5 +152,12 @@ class ListAds extends Component {
     }
 }
 
+
+ListAds.T = {
+    fetchAds: T.func.isRequired,
+    getStateUser: T.func.isRequired,
+    loadSession: T.func.isRequired,
+    getLimit: T.func.isRequired,
+}
 
 export default ListAds;

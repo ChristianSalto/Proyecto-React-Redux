@@ -4,15 +4,15 @@ import { connect } from 'react-redux';
 
 import SeeAllAds from './SeeAllAds';
 import { handleAllAds } from '../../store/action';
-import { getStateAds } from '../../store/selectors';
+//import { getStateAds } from '../../store/selectors';
 
 
 
-const mapStateToProps = (state, ownProps) => {
-    return {
-        getStateAds: getStateAds(state),
-    }
-}
+// const mapStateToProps = (state, ownProps) => {
+//     return {
+//         getStateAds: getStateAds(state),
+//     }
+// }
 
 
 
@@ -23,7 +23,7 @@ function mapDispatchToProps(dispatch, ownProps) {
 }
 
 
-const connected = connect(mapStateToProps, mapDispatchToProps);
+const connected = connect(null, mapDispatchToProps);
 const SeeAllAdsConnected = connected(SeeAllAds);
 
 

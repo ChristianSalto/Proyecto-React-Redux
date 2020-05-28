@@ -8,7 +8,7 @@ import { DivContainerAllAds, DivHome, DivRanger } from './styledSeeAllAds';
 // import { Nav, InputNav, Search } from '../listAds/StyleListAds';
 
 
-function SeeAllAds({ getStateAds, fetchAllAds }) {
+function SeeAllAds({ fetchAllAds }) {
     const [ads, setAds] = useState(null);
 
     // const state = () => getState;
@@ -27,7 +27,7 @@ function SeeAllAds({ getStateAds, fetchAllAds }) {
     useEffect(() => {
         const getAds = async () => {
             fetchAllAds();
-            getStateAds;
+            // getStateAds;
             const { data } = await getAllAds();
             const { results } = data;
             setAds(results);
@@ -80,8 +80,9 @@ function SeeAllAds({ getStateAds, fetchAllAds }) {
                         <Search onClick={this.handleFilter}> Search </Search>
                     </Nav> */}
             </DivHome>
-            {ads !== null &&
-                <Cards ads={ads} />
+            {ads === null
+                ? <h3>Loading...</h3>
+                : <Cards ads={ads} />
             }
 
         </DivContainerAllAds>

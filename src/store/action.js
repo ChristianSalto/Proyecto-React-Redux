@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import * as TYPES from './types';
 import { getAds, filterAds, getLogin, getAllAds } from '../services/api';
 import { saveUser } from '../store/selectors';
@@ -74,7 +76,7 @@ export const getAdvert = async (dispatch, getLimit) => {
 export const filterAdvert = async (dispatch, filter, limit) => {
 
     if (filter.fields === "Fields") {
-        dispatch(getAdvert);
+        getAdvert(dispatch, limit);
         return;
     }
     dispatch(fetchRequest());

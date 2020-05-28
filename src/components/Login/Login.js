@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import Form from '../Form';
 
 //import React from 'react';
 
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 //import { getLogin } from '../../services/api';
 
 //import { selectHandleLogin } from '../../store/selectors'
-import { Button, Layout, Input, FieldContainer, FieldTitle, FieldError } from '../Register/StyleRegister';
+// import { Button, Layout, Input, FieldContainer, FieldTitle, FieldError } from '../Register/StyleRegister';
 
 
 
@@ -48,33 +49,44 @@ class Login extends Component {
 
     render() {
         return (
-            <Layout>
-                <form onSubmit={this.handleLogin} className="login-container">
-                    <FieldTitle className="login-title"><h1>Login</h1></FieldTitle>
-                    <FieldContainer className="input-login">
-                        <label htmlFor="username">Username</label>
-                        <Input type="text"
-                            name="username"
-                            className="login-input"
-                            placeholder="Username"
-                            defaultValue={this.state.username}
-                            required />
-                    </FieldContainer>
 
-                    <FieldContainer className="input-login">
-                        <label htmlFor="password">Password</label>
-                        <Input type="password" name="password" className="login-input" placeholder="Password" required />
-                    </FieldContainer>
-                    <FieldContainer>
-                        <Button type="submit" className="login-btn">Login</Button>
 
-                        <Link to="/">
-                            <Button secundary type="button">I'm not registered</Button>
-                        </Link>
-                    </FieldContainer>
-                    <FieldError className="error">{this.state.error}</FieldError>
-                </form>
-            </Layout>
+            <Form
+                handleForm={this.handleLogin}
+                error={this.state.error}
+                name="Login"
+                path="/"
+                color="secundary"
+                nameButton="I'm not registered"
+                value={this.state.username}
+            />
+            // <Layout>
+            //     <form onSubmit={this.handleLogin} className="login-container">
+            //         <FieldTitle className="login-title"><h1>Login</h1></FieldTitle>
+            //         <FieldContainer className="input-login">
+            //             <label htmlFor="username">Username</label>
+            //             <Input type="text"
+            //                 name="username"
+            //                 className="login-input"
+            //                 placeholder="Username"
+            //                 defaultValue={this.state.username}
+            //                 required />
+            //         </FieldContainer>
+
+            //         <FieldContainer className="input-login">
+            //             <label htmlFor="password">Password</label>
+            //             <Input type="password" name="password" className="login-input" placeholder="Password" required />
+            //         </FieldContainer>
+            //         <FieldContainer>
+            //             <Button type="submit" className="login-btn">Login</Button>
+
+            //             <Link to="/">
+            //                 <Button secundary type="button">I'm not registered</Button>
+            //             </Link>
+            //         </FieldContainer>
+            //         <FieldError className="error">{this.state.error}</FieldError>
+            //     </form>
+            // </Layout>
         );
     }
 }
