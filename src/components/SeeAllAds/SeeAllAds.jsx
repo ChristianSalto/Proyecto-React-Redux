@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { getAllAds } from '../../services/api';
-import Cards from '../ListAds/Cards';
+import Cards from '../Cards/Cards';
 import { Link } from 'react-router-dom';
 import { DivContainerAllAds, DivHome, DivRanger } from './styledSeeAllAds';
 // import { Nav, InputNav, Search } from '../listAds/StyleListAds';

@@ -15,6 +15,25 @@ export const saveUser = (username, registered) => {
   return user;
 }
 
+export const createAdvert = ({
+  name, number,
+  description, type, photo,
+  work, motor, lifestyle, mobile,
+}) => {
+  let f = [];
+  f.push(work, motor, lifestyle, mobile);
+  let tags = f.filter(tag => tag.checked).map(tag => tag.value);
+  const ads = {
+    tags: tags,
+    name: name.value,
+    price: parseInt(number.value),
+    description: description.value,
+    type: type.value,
+    photo: photo.value
+  }
+
+  return ads;
+}
 
 // export const selectHandleLogin = async (fetchSuccess, userSession, user, event, history) => {
 //     event.preventDefault();

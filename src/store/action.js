@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 import * as TYPES from './types';
-import { getAds, filterAds, getLogin, getAllAds } from '../services/api';
+import { getAds, filterAds, getLogin, getAllAds, editAds } from '../services/api';
 import { saveUser } from '../store/selectors';
 
 export const fetchRequest = () => ({
@@ -36,6 +36,11 @@ export const userSession = user => ({
 });
 
 
+export const fetchResultCreatAds = result => ({
+    type: TYPES.FETCH_RESULTS_CREAT_ADS,
+    result
+});
+
 
 
 export const loadSession = (dispatch) => {
@@ -46,6 +51,7 @@ export const loadSession = (dispatch) => {
 
 export const loadLogin = async (dispatch, username, password, { history }) => {
     dispatch(fetchRequest());
+    debugger
     const { data } = await getLogin(username, password);
     if (data.success) {
         const user = saveUser(username, data.success);
@@ -56,7 +62,7 @@ export const loadLogin = async (dispatch, username, password, { history }) => {
         history.push('/listAds');
     } else {
         dispatch(fetchFailure(data.error));
-        return data.error
+        return data.error;
     }
 
 }
@@ -124,6 +130,18 @@ export const handleAllAds = async (dispatch) => {
         const { data } = await getAllAds();
         dispatch(fetchAds(data.results));
         dispatch(fetchSuccess(data.success));
+    } catch (err) {
+        dispatch(fetchFailure(err));
+    }
+}
+
+
+export const createAds = async (dispatch, ads) => {
+    dispatch(fetchRequest());
+    try {
+        const { data } = await editAds(ads);
+        dispatch(fetchSuccess(data.success));
+        dispatch(fetchResultCreatAds(data.result));
     } catch (err) {
         dispatch(fetchFailure(err));
     }

@@ -35,7 +35,7 @@ function Cards(props) {
                             <ContainerPrice>
                                 <Link to={{
                                     pathname: "/details",
-                                    props: ads._id
+                                    id: ads._id,
                                 }}>
                                     <ButtonDetails>Details</ButtonDetails>
                                 </Link>
@@ -54,6 +54,7 @@ function Cards(props) {
 export function Card(props) {
     const data = [];
     data.push(props.data);
+
     return (
         <Fragment>
             {

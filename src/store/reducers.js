@@ -61,7 +61,13 @@ export function ui(state = initialState.ui, action) {
         case TYPES.FETCH_FAILURE:
             return {
                 ...state,
-                error: action.error
+                error: action.error,
+            }
+
+        case TYPES.FETCH_RESULTS_CREAT_ADS:
+            return {
+                ...state,
+                result: action.result,
             }
 
         default:

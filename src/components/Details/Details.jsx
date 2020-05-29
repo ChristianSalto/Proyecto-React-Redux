@@ -1,36 +1,40 @@
 /* eslint-disable */
 
 import React, { Component, Fragment } from 'react';
-import { getAllAds } from '../../services/api';
-import { Card } from '../ListAds/Cards';
+//import { getAllAds } from '../../services/api';
+import { Card } from '../Cards/Cards';
 import { Link } from 'react-router-dom';
+import hocAllAds from '../../Hoc/fetchAllAds';
 
 class Details extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            result: [{}],
-        }
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         result: [{}],
+    //     }
+    // }
 
-    componentWillMount = async () => {
-        const idCards = this.props.location.props;
-        const { data } = await getAllAds();
-        const { results } = data;
-        results.map((item) => {
-            if (item._id === idCards) {
-                this.setState({ result: item });
-            }
-        })
-    }
+    // componentDidMount = async () => {
+    //     const idCards = this.props.location.id;
+    //     const { data } = await getAllAds();
+    //     const { results } = data;
+
+    //     results.map((item) => {
+    //         if (item._id === idCards) {
+    //             this.setState({ result: item });
+    //         }
+    //     })
+    // }
 
     render() {
-        if (this.state.result._id === this.props.location.props) {
+        const { data: ads, id } = this.props;
+        if (!ads) return <div><h3>Loading...</h3></div>
+        if (ads._id === id) {
             return (
                 <Fragment>
                     <div>
                         <h1>You are welcome</h1>
-                        <Card data={this.state.result} />
+                        <Card data={ads} />
                     </div>
 
                     <Link to="/listAds">
@@ -47,4 +51,4 @@ class Details extends Component {
     }
 }
 
-export default Details;
+export default hocAllAds()(Details);

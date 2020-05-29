@@ -52,3 +52,8 @@ export const DivContainerCreateAds = styled.div`
    font-size: 60px;
  }
   `;
+
+export const DivCheckbox = styled.div`
+display: flex;
+justify-content: center;
+  `;

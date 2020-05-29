@@ -4,12 +4,12 @@ import Register from './components/Register';
 import Login from './components/Login';
 import ListAds from './components/ListAds';
 import Details from './components/Details';
-import CreateAds from '../src/components/createAds/CreateAds';
+import CreateAds from './components/CreateAds';
 import SeeAllAds from './components/SeeAllAds';
 import PrivateRoute from '../src/privateRoute/PrivateRoute';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Form from './components/Form';
+
 
 class App extends Component {
 
@@ -20,8 +20,6 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Register} />
             <Route path="/login" component={Login} />
-
-            <Route path="/form" component={Form} />
 
             <PrivateRoute path="/listAds" component={ListAds} />
             <PrivateRoute path="/details" component={Details} />

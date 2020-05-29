@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 //import { filterAds } from '../../services/api';
 import T from 'prop-types';
-import Cards from './Cards';
+import Cards from '../Cards/Cards';
 import { Nav, InputNav, LogOut, Search, AsideRight, AsideContainer, DivContainerHome, TitleNav } from './StyleListAds';
 import { Link } from 'react-router-dom';
 import CompAsideLeft from '../CompAsideLeft';
@@ -22,7 +22,7 @@ class ListAds extends Component {
         }
     }
 
-    UNSAFE_componentWillMount() {
+    componentDidMount() {
         const { fetchAds, getStateUser, loadSession, getLimit } = this.props;
         fetchAds(getLimit);
         getStateUser;
@@ -35,6 +35,10 @@ class ListAds extends Component {
         // const { results } = data;
         // this.setState({ result: results });
     }
+
+    // componentDidMount() {
+    //     this.props.handleAllAds();
+    // };
 
 
     showFields = (event) => {
@@ -126,6 +130,7 @@ class ListAds extends Component {
         const { getStateAds } = this.props;
         const ads = getStateAds.ads;
         const msj = getStateAds.msj;
+        if (!ads) return <div><h3>Loading...</h3></div>
         return (
             <DivContainerHome>
                 <Nav>
