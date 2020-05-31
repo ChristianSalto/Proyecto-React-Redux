@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import T from 'prop-types';
 
 import { Button, Layout, Input, FieldContainer, FieldTitle, FieldError } from './StyleRegister';
 
 
-const Form = ({ handleForm, name, path, error, color, nameButton, value }) => {
+const Form = ({
+    handleForm, name, path,
+    error, color, nameButton,
+    value,
+}) => {
+    //const [dataMsj, setTime] = useState(dataMsj);
 
     const [data, setDatas] = useState({
         username: "",
@@ -20,6 +26,12 @@ const Form = ({ handleForm, name, path, error, color, nameButton, value }) => {
             [password]: value
         })
     }
+
+    // useEffect(() => {
+    //     console.log(msj)
+    //     const time = setTimeout(() => setTime(msj), 2000)
+    //     clearTimeout(time);
+    // }, []);
 
     return (
         <Layout>
@@ -57,6 +69,18 @@ const Form = ({ handleForm, name, path, error, color, nameButton, value }) => {
             </form>
         </Layout>
     )
+}
+
+
+Form.propTypes = {
+    handleForm: T.func.isRequired,
+    error: T.string.isRequired,
+    name: T.string.isRequired,
+    path: T.string.isRequired,
+    color: T.string.isRequired,
+    nameButton: T.string.isRequired,
+    value: T.string,
+    msj: T.string,
 }
 
 

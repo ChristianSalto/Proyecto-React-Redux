@@ -15,7 +15,7 @@ export default function hocAllAds() {
                 const idCards = this.props.location.id;
                 const { data } = await getAllAds();
                 const { results } = data;
-                results.map((item) => {
+                results.forEach((item) => {
                     if (item._id === idCards) {
                         this.setState({ data: item });
                     }

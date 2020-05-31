@@ -26,7 +26,7 @@ function Cards(props) {
                     return (
                         <DivContainer key={ads._id}>
                             <HeaderCards>{ads.name}</HeaderCards>
-                            <div><Img src={ads.photo === "photo" ? Photo : ads.photo} alt="..." /></div>
+                            <div><Img src={ads.photo != "no-photo" ? ads.photo : Photo} alt="..." /></div>
                             <Tags>{ads.tags === undefined || ads.tags === null ? "" : ads.tags.map((item) => { return item }).join(",")}</Tags>
                             <Date>
                                 <span>{ads.createdAt}</span>
@@ -62,7 +62,7 @@ export function Card(props) {
                     return (
                         <DivContainer key={ad._id}>
                             <HeaderCards>{ad.name}</HeaderCards>
-                            <div><Img src={ad.photo === "photo" ? Photo : ad.photo} alt="..." /></div>
+                            <div><Img src={ad.photo != "no-photo" ? ad.photo : Photo} alt="..." /></div>
                             <Tags>{ad.tags === undefined || ad.tags === null ? "" : ad.tags.map((item) => { return item }).join(",")}</Tags>
                             <Date>
                                 <span>{ad.createdAt}</span>

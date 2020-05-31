@@ -7,6 +7,7 @@ import Cards from '../Cards/Cards';
 import { Nav, InputNav, LogOut, Search, AsideRight, AsideContainer, DivContainerHome, TitleNav } from './StyleListAds';
 import { Link } from 'react-router-dom';
 import CompAsideLeft from '../CompAsideLeft';
+//import Grid from '@material-ui/core/Grid';
 
 
 class ListAds extends Component {
@@ -158,11 +159,10 @@ class ListAds extends Component {
 }
 
 
-ListAds.T = {
+ListAds.propTypes = {
     fetchAds: T.func.isRequired,
-    getStateUser: T.func.isRequired,
     loadSession: T.func.isRequired,
-    getLimit: T.func.isRequired,
+    getLimit: T.number,
 }
 
 export default ListAds;

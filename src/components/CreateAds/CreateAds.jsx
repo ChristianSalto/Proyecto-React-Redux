@@ -6,6 +6,7 @@ import { DivContainerForm, DivContainerCreateAds, DivCheckbox } from './StyledCr
 import { Link } from 'react-router-dom';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import T from 'prop-types';
 
 import { createAdvert } from '../../store/selectors';
 
@@ -105,6 +106,10 @@ class CreateAds extends Component {
             </DivContainerCreateAds>
         )
     }
+}
+
+CreateAds.propTypes = {
+    ads: T.object,
 }
 
 export default CreateAds;

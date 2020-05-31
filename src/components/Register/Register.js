@@ -4,7 +4,7 @@ import { getRegister } from '../../services/api';
 // import { Button, Layout, Input, FieldContainer, FieldTitle, FieldError } from './StyleRegister';
 
 import Form from '../Form';
-
+import T from 'prop-types';
 import { saveUser } from '../../store/selectors';
 
 
@@ -26,7 +26,10 @@ class Register extends Component {
     handleRegister = async (event) => {
         event.preventDefault();
         const { username, password } = event.target;
-        const { data } = await getRegister(username.value, password.value);
+        //  const { data } = await getRegister(username.value, password.value);
+        const data = {};
+        data.success = true;
+
 
 
         if (data.success) {
@@ -34,7 +37,7 @@ class Register extends Component {
             const { userSession } = this.props
             userSession(user);
             localStorage.setItem("user", JSON.stringify(user));
-            this.props.history.push('/login', { registered: data.success, msj: "successfully registered" });
+            this.props.history.push('/login');
         } else {
             this.setState({ error: data.error, success: true });
             setTimeout(() => this.setState({ error: "" }), 5000);
@@ -51,6 +54,7 @@ class Register extends Component {
     // }
 
     render() {
+
         return (
 
             <Form
@@ -84,6 +88,13 @@ class Register extends Component {
             // </Layout>
         );
     }
+}
+
+
+Register.propTypes = {
+    username: T.string,
+    password: T.string,
+    userSession: T.func,
 }
 
 export default Register;

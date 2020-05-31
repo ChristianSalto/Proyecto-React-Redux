@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Form from '../Form';
+import T from 'prop-types';
 
 //import React from 'react';
 
@@ -15,12 +16,14 @@ class Login extends Component {
     //const { registered, msj } = location.state;
     //console.log(registered, msj)
     constructor(props) {
+        //debugger
         super(props);
         this.state = {
             error: "",
-            username: ""
+            username: "",
         }
     }
+
 
     componentDidMount() {
         this.props.loadSession();
@@ -49,8 +52,6 @@ class Login extends Component {
 
     render() {
         return (
-
-
             <Form
                 handleForm={this.handleLogin}
                 error={this.state.error}
@@ -89,6 +90,13 @@ class Login extends Component {
             // </Layout>
         );
     }
+}
+
+
+Login.propTypes = {
+    username: T.string,
+    password: T.string,
+    loadLogin: T.func,
 }
 
 

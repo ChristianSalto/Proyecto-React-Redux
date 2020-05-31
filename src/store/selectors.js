@@ -1,5 +1,3 @@
-// import { initialState } from './reducers';
-
 export const getStateUser = state => state.user;
 export const getStateAds = state => state.ads;
 // export const getState = () => initialState;
@@ -26,7 +24,7 @@ export const createAdvert = ({
   const ads = {
     tags: tags,
     name: name.value,
-    price: parseInt(number.value),
+    price: parseInt(number.value, 10),
     description: description.value,
     type: type.value,
     photo: photo.value
