@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { getAllAds } from '../services/api';
 
-export default function hocAllAds() {
+export default function hocDetailsAds() {
     return function (WrappedComponent) {
-        class FetchAllAds extends Component {
+        class FetchDetailsAds extends Component {
             constructor() {
                 super();
                 this.state = {
@@ -30,6 +30,6 @@ export default function hocAllAds() {
             }
         }
 
-        return FetchAllAds;
+        return FetchDetailsAds;
     };
 }

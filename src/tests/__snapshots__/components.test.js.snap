@@ -1,0 +1,1638 @@
+exports[`CompAsideLeft snapshot testing 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CompAsideLeft />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <Unknown>
+          <div>
+                    <label
+                              htmlFor="price">
+                              <h2>
+                                        For prices
+                              </h2>
+                    </label>
+                    <div>
+                               
+                              <input
+                                        max="1000"
+                                        min="0"
+                                        name="price"
+                                        onChange={undefined}
+                                        type="range" />
+                    </div>
+                    <span>
+                               $
+                    </span>
+          </div>
+          <div>
+                    <Unknown
+                              htmlFor="status-sell">
+                              show me sold
+                    </Unknown>
+                    <Unknown
+                              name="status-sell"
+                              onChange={undefined}
+                              type="checkbox" />
+          </div>
+</Unknown>,
+        <Unknown>
+          <h2>
+                    You can see the fields
+          </h2>
+          <select
+                    onChange={undefined}>
+                    <option>
+                              Fields
+                    </option>
+                    <option
+                              value="name">
+                              Name
+                    </option>
+                    <option
+                              value="price">
+                              Price
+                    </option>
+                    <option
+                              value="type">
+                              Type
+                    </option>
+                    <option
+                              value="photo">
+                              Photo
+                    </option>
+                    <option
+                              value="createdAt">
+                              CreatedAt
+                    </option>
+                    <option
+                              value="updatedAt">
+                              UpdatedAt
+                    </option>
+          </select>
+          <label
+                    htmlFor="limit">
+                    Limit
+          </label>
+          <input
+                    max="20"
+                    min="1"
+                    name="limit"
+                    onChange={undefined}
+                    type="number" />
+          <Unknown
+                    to="/seeAllAds">
+                    <h4>
+                              You can see all the ads here !!!
+                    </h4>
+          </Unknown>
+</Unknown>,
+        <Unknown>
+          <Unknown
+                    to="/edit">
+                    <h4>
+                              You can create your ads
+                    </h4>
+          </Unknown>
+</Unknown>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": Array [
+            <div>
+              <label
+                            htmlFor="price">
+                            <h2>
+                                          For prices
+                            </h2>
+              </label>
+              <div>
+                             
+                            <input
+                                          max="1000"
+                                          min="0"
+                                          name="price"
+                                          onChange={undefined}
+                                          type="range" />
+              </div>
+              <span>
+                             $
+              </span>
+</div>,
+            <div>
+              <Unknown
+                            htmlFor="status-sell">
+                            show me sold
+              </Unknown>
+              <Unknown
+                            name="status-sell"
+                            onChange={undefined}
+                            type="checkbox" />
+</div>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <label
+                  htmlFor="price">
+                  <h2>
+                                    For prices
+                  </h2>
+</label>,
+                <div>
+                   
+                  <input
+                                    max="1000"
+                                    min="0"
+                                    name="price"
+                                    onChange={undefined}
+                                    type="range" />
+</div>,
+                <span>
+                   $
+</span>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <h2>
+                    For prices
+</h2>,
+                  "htmlFor": "price",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "For prices",
+                  },
+                  "ref": null,
+                  "rendered": "For prices",
+                  "type": "h2",
+                },
+                "type": "label",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    " ",
+                    <input
+                      max="1000"
+                      min="0"
+                      name="price"
+                      onChange={undefined}
+                      type="range" />,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  " ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "max": "1000",
+                      "min": "0",
+                      "name": "price",
+                      "onChange": undefined,
+                      "type": "range",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    undefined,
+                    " $",
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  undefined,
+                  " $",
+                ],
+                "type": "span",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <Unknown
+                  htmlFor="status-sell">
+                  show me sold
+</Unknown>,
+                <Unknown
+                  name="status-sell"
+                  onChange={undefined}
+                  type="checkbox" />,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": "show me sold",
+                  "htmlFor": "status-sell",
+                },
+                "ref": null,
+                "rendered": "show me sold",
+                "type": Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "baseHash": 1280172402,
+                    "componentId": "sc-fzozJi",
+                    "isStatic": false,
+                    "rules": Array [
+                      "
+   margin-top: 150px;
+   font-size: 20px;
+",
+                    ],
+                    "staticRulesId": "",
+                  },
+                  "displayName": "styled.label",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-fzozJi",
+                  "target": "label",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                },
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "name": "status-sell",
+                  "onChange": undefined,
+                  "type": "checkbox",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "baseHash": -1923298833,
+                    "componentId": "sc-AxmLO",
+                    "isStatic": false,
+                    "rules": Array [
+                      "
+   width: 20px; 
+   height: 20px; 
+   cursor: pointer;
+ ",
+                    ],
+                    "staticRulesId": "",
+                  },
+                  "displayName": "styled.input",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-AxmLO",
+                  "target": "input",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                },
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "baseHash": -1474970742,
+            "componentId": "sc-Axmtr",
+            "isStatic": false,
+            "rules": Array [
+              "
+justify-content: center;
+border: 5px solid gray;
+border-style: ridge;
+border-radius: 10px;
+display: inline-block;
+flex-wrap: wrap;
+padding: 10px;
+margin: 20px;
+width:65%;
+div{ 
+  margin-top: 50px;
+  padding: 10px;
+  div{
+    height:8px;
+    background:gray;
+        input{
+          margin-top: -30px;
+            cursor: pointer;
+        };
+      };
+};
+",
+            ],
+            "staticRulesId": "",
+          },
+          "displayName": "styled.div",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-Axmtr",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        },
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": Array [
+            <h2>
+              You can see the fields
+</h2>,
+            <select
+              onChange={undefined}>
+              <option>
+                            Fields
+              </option>
+              <option
+                            value="name">
+                            Name
+              </option>
+              <option
+                            value="price">
+                            Price
+              </option>
+              <option
+                            value="type">
+                            Type
+              </option>
+              <option
+                            value="photo">
+                            Photo
+              </option>
+              <option
+                            value="createdAt">
+                            CreatedAt
+              </option>
+              <option
+                            value="updatedAt">
+                            UpdatedAt
+              </option>
+</select>,
+            <label
+              htmlFor="limit">
+              Limit
+</label>,
+            <input
+              max="20"
+              min="1"
+              name="limit"
+              onChange={undefined}
+              type="number" />,
+            <Unknown
+              to="/seeAllAds">
+              <h4>
+                            You can see all the ads here !!!
+              </h4>
+</Unknown>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "You can see the fields",
+            },
+            "ref": null,
+            "rendered": "You can see the fields",
+            "type": "h2",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <option>
+                  Fields
+</option>,
+                <option
+                  value="name">
+                  Name
+</option>,
+                <option
+                  value="price">
+                  Price
+</option>,
+                <option
+                  value="type">
+                  Type
+</option>,
+                <option
+                  value="photo">
+                  Photo
+</option>,
+                <option
+                  value="createdAt">
+                  CreatedAt
+</option>,
+                <option
+                  value="updatedAt">
+                  UpdatedAt
+</option>,
+              ],
+              "onChange": undefined,
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Fields",
+                },
+                "ref": null,
+                "rendered": "Fields",
+                "type": "option",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Name",
+                  "value": "name",
+                },
+                "ref": null,
+                "rendered": "Name",
+                "type": "option",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Price",
+                  "value": "price",
+                },
+                "ref": null,
+                "rendered": "Price",
+                "type": "option",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Type",
+                  "value": "type",
+                },
+                "ref": null,
+                "rendered": "Type",
+                "type": "option",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Photo",
+                  "value": "photo",
+                },
+                "ref": null,
+                "rendered": "Photo",
+                "type": "option",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "CreatedAt",
+                  "value": "createdAt",
+                },
+                "ref": null,
+                "rendered": "CreatedAt",
+                "type": "option",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "UpdatedAt",
+                  "value": "updatedAt",
+                },
+                "ref": null,
+                "rendered": "UpdatedAt",
+                "type": "option",
+              },
+            ],
+            "type": "select",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Limit",
+              "htmlFor": "limit",
+            },
+            "ref": null,
+            "rendered": "Limit",
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "max": "20",
+              "min": "1",
+              "name": "limit",
+              "onChange": undefined,
+              "type": "number",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": <h4>
+                You can see all the ads here !!!
+</h4>,
+              "to": "/seeAllAds",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "You can see all the ads here !!!",
+              },
+              "ref": null,
+              "rendered": "You can see all the ads here !!!",
+              "type": "h4",
+            },
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "displayName": "Link",
+              "propTypes": Object {
+                "innerRef": [Function],
+                "onClick": [Function],
+                "replace": [Function],
+                "target": [Function],
+                "to": [Function],
+              },
+              "render": [Function],
+            },
+          },
+        ],
+        "type": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "baseHash": -2021127760,
+            "componentId": "sc-fzoLsD",
+            "isStatic": false,
+            "rules": Array [
+              "
+   padding: 10px;
+   justify-content: center;
+   border: 5px solid gray;
+   border-radius: 10px;
+   border-style: ridge;
+   display: inline-block;
+   flex-wrap: wrap;
+   select{
+     cursor: pointer;
+     margin-top:20px;
+     background: transparent;
+     border:0,5px;
+     font-size: 14px;
+     height: 30px;
+     padding: 5px;
+     width: 250px;
+    };
+    label{
+      margin-top:120px;
+    };
+    input{
+      background: transparent;
+      border:0,5px;
+    }
+    ",
+            ],
+            "staticRulesId": "",
+          },
+          "displayName": "styled.div",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-fzoLsD",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        },
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": <Unknown
+            to="/edit">
+            <h4>
+                        You can create your ads
+            </h4>
+</Unknown>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <h4>
+              You can create your ads
+</h4>,
+            "to": "/edit",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "You can create your ads",
+            },
+            "ref": null,
+            "rendered": "You can create your ads",
+            "type": "h4",
+          },
+          "type": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "displayName": "Link",
+            "propTypes": Object {
+              "innerRef": [Function],
+              "onClick": [Function],
+              "replace": [Function],
+              "target": [Function],
+              "to": [Function],
+            },
+            "render": [Function],
+          },
+        },
+        "type": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "baseHash": 1028616872,
+            "componentId": "sc-fzpans",
+            "isStatic": false,
+            "rules": Array [
+              "
+    margin-top:90px;
+",
+            ],
+            "staticRulesId": "",
+          },
+          "displayName": "styled.div",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-fzpans",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        },
+      },
+    ],
+    "type": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "baseHash": 1882630949,
+        "componentId": "sc-AxheI",
+        "isStatic": false,
+        "rules": Array [
+          "
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+padding:10px;
+margin: 50px;
+max-height: 1000px;
+label{
+    display: block;
+    padding: 5px;
+};
+",
+        ],
+        "staticRulesId": "",
+      },
+      "displayName": "styled.div",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "sc-AxheI",
+      "target": "div",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    },
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <Unknown>
+            <div>
+                        <label
+                                    htmlFor="price">
+                                    <h2>
+                                                For prices
+                                    </h2>
+                        </label>
+                        <div>
+                                     
+                                    <input
+                                                max="1000"
+                                                min="0"
+                                                name="price"
+                                                onChange={undefined}
+                                                type="range" />
+                        </div>
+                        <span>
+                                     $
+                        </span>
+            </div>
+            <div>
+                        <Unknown
+                                    htmlFor="status-sell">
+                                    show me sold
+                        </Unknown>
+                        <Unknown
+                                    name="status-sell"
+                                    onChange={undefined}
+                                    type="checkbox" />
+            </div>
+</Unknown>,
+          <Unknown>
+            <h2>
+                        You can see the fields
+            </h2>
+            <select
+                        onChange={undefined}>
+                        <option>
+                                    Fields
+                        </option>
+                        <option
+                                    value="name">
+                                    Name
+                        </option>
+                        <option
+                                    value="price">
+                                    Price
+                        </option>
+                        <option
+                                    value="type">
+                                    Type
+                        </option>
+                        <option
+                                    value="photo">
+                                    Photo
+                        </option>
+                        <option
+                                    value="createdAt">
+                                    CreatedAt
+                        </option>
+                        <option
+                                    value="updatedAt">
+                                    UpdatedAt
+                        </option>
+            </select>
+            <label
+                        htmlFor="limit">
+                        Limit
+            </label>
+            <input
+                        max="20"
+                        min="1"
+                        name="limit"
+                        onChange={undefined}
+                        type="number" />
+            <Unknown
+                        to="/seeAllAds">
+                        <h4>
+                                    You can see all the ads here !!!
+                        </h4>
+            </Unknown>
+</Unknown>,
+          <Unknown>
+            <Unknown
+                        to="/edit">
+                        <h4>
+                                    You can create your ads
+                        </h4>
+            </Unknown>
+</Unknown>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": Array [
+              <div>
+                <label
+                                htmlFor="price">
+                                <h2>
+                                                For prices
+                                </h2>
+                </label>
+                <div>
+                                 
+                                <input
+                                                max="1000"
+                                                min="0"
+                                                name="price"
+                                                onChange={undefined}
+                                                type="range" />
+                </div>
+                <span>
+                                 $
+                </span>
+</div>,
+              <div>
+                <Unknown
+                                htmlFor="status-sell">
+                                show me sold
+                </Unknown>
+                <Unknown
+                                name="status-sell"
+                                onChange={undefined}
+                                type="checkbox" />
+</div>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <label
+                    htmlFor="price">
+                    <h2>
+                                        For prices
+                    </h2>
+</label>,
+                  <div>
+                     
+                    <input
+                                        max="1000"
+                                        min="0"
+                                        name="price"
+                                        onChange={undefined}
+                                        type="range" />
+</div>,
+                  <span>
+                     $
+</span>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <h2>
+                      For prices
+</h2>,
+                    "htmlFor": "price",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "For prices",
+                    },
+                    "ref": null,
+                    "rendered": "For prices",
+                    "type": "h2",
+                  },
+                  "type": "label",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      " ",
+                      <input
+                        max="1000"
+                        min="0"
+                        name="price"
+                        onChange={undefined}
+                        type="range" />,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    " ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "max": "1000",
+                        "min": "0",
+                        "name": "price",
+                        "onChange": undefined,
+                        "type": "range",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "input",
+                    },
+                  ],
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      undefined,
+                      " $",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    undefined,
+                    " $",
+                  ],
+                  "type": "span",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <Unknown
+                    htmlFor="status-sell">
+                    show me sold
+</Unknown>,
+                  <Unknown
+                    name="status-sell"
+                    onChange={undefined}
+                    type="checkbox" />,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "show me sold",
+                    "htmlFor": "status-sell",
+                  },
+                  "ref": null,
+                  "rendered": "show me sold",
+                  "type": Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "baseHash": 1280172402,
+                      "componentId": "sc-fzozJi",
+                      "isStatic": false,
+                      "rules": Array [
+                        "
+   margin-top: 150px;
+   font-size: 20px;
+",
+                      ],
+                      "staticRulesId": "",
+                    },
+                    "displayName": "styled.label",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "sc-fzozJi",
+                    "target": "label",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  },
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "name": "status-sell",
+                    "onChange": undefined,
+                    "type": "checkbox",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "baseHash": -1923298833,
+                      "componentId": "sc-AxmLO",
+                      "isStatic": false,
+                      "rules": Array [
+                        "
+   width: 20px; 
+   height: 20px; 
+   cursor: pointer;
+ ",
+                      ],
+                      "staticRulesId": "",
+                    },
+                    "displayName": "styled.input",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "sc-AxmLO",
+                    "target": "input",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  },
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "baseHash": -1474970742,
+              "componentId": "sc-Axmtr",
+              "isStatic": false,
+              "rules": Array [
+                "
+justify-content: center;
+border: 5px solid gray;
+border-style: ridge;
+border-radius: 10px;
+display: inline-block;
+flex-wrap: wrap;
+padding: 10px;
+margin: 20px;
+width:65%;
+div{ 
+  margin-top: 50px;
+  padding: 10px;
+  div{
+    height:8px;
+    background:gray;
+        input{
+          margin-top: -30px;
+            cursor: pointer;
+        };
+      };
+};
+",
+              ],
+              "staticRulesId": "",
+            },
+            "displayName": "styled.div",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-Axmtr",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          },
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": Array [
+              <h2>
+                You can see the fields
+</h2>,
+              <select
+                onChange={undefined}>
+                <option>
+                                Fields
+                </option>
+                <option
+                                value="name">
+                                Name
+                </option>
+                <option
+                                value="price">
+                                Price
+                </option>
+                <option
+                                value="type">
+                                Type
+                </option>
+                <option
+                                value="photo">
+                                Photo
+                </option>
+                <option
+                                value="createdAt">
+                                CreatedAt
+                </option>
+                <option
+                                value="updatedAt">
+                                UpdatedAt
+                </option>
+</select>,
+              <label
+                htmlFor="limit">
+                Limit
+</label>,
+              <input
+                max="20"
+                min="1"
+                name="limit"
+                onChange={undefined}
+                type="number" />,
+              <Unknown
+                to="/seeAllAds">
+                <h4>
+                                You can see all the ads here !!!
+                </h4>
+</Unknown>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "You can see the fields",
+              },
+              "ref": null,
+              "rendered": "You can see the fields",
+              "type": "h2",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <option>
+                    Fields
+</option>,
+                  <option
+                    value="name">
+                    Name
+</option>,
+                  <option
+                    value="price">
+                    Price
+</option>,
+                  <option
+                    value="type">
+                    Type
+</option>,
+                  <option
+                    value="photo">
+                    Photo
+</option>,
+                  <option
+                    value="createdAt">
+                    CreatedAt
+</option>,
+                  <option
+                    value="updatedAt">
+                    UpdatedAt
+</option>,
+                ],
+                "onChange": undefined,
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Fields",
+                  },
+                  "ref": null,
+                  "rendered": "Fields",
+                  "type": "option",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Name",
+                    "value": "name",
+                  },
+                  "ref": null,
+                  "rendered": "Name",
+                  "type": "option",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Price",
+                    "value": "price",
+                  },
+                  "ref": null,
+                  "rendered": "Price",
+                  "type": "option",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Type",
+                    "value": "type",
+                  },
+                  "ref": null,
+                  "rendered": "Type",
+                  "type": "option",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Photo",
+                    "value": "photo",
+                  },
+                  "ref": null,
+                  "rendered": "Photo",
+                  "type": "option",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "CreatedAt",
+                    "value": "createdAt",
+                  },
+                  "ref": null,
+                  "rendered": "CreatedAt",
+                  "type": "option",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "UpdatedAt",
+                    "value": "updatedAt",
+                  },
+                  "ref": null,
+                  "rendered": "UpdatedAt",
+                  "type": "option",
+                },
+              ],
+              "type": "select",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Limit",
+                "htmlFor": "limit",
+              },
+              "ref": null,
+              "rendered": "Limit",
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "max": "20",
+                "min": "1",
+                "name": "limit",
+                "onChange": undefined,
+                "type": "number",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": <h4>
+                  You can see all the ads here !!!
+</h4>,
+                "to": "/seeAllAds",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "You can see all the ads here !!!",
+                },
+                "ref": null,
+                "rendered": "You can see all the ads here !!!",
+                "type": "h4",
+              },
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "displayName": "Link",
+                "propTypes": Object {
+                  "innerRef": [Function],
+                  "onClick": [Function],
+                  "replace": [Function],
+                  "target": [Function],
+                  "to": [Function],
+                },
+                "render": [Function],
+              },
+            },
+          ],
+          "type": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "baseHash": -2021127760,
+              "componentId": "sc-fzoLsD",
+              "isStatic": false,
+              "rules": Array [
+                "
+   padding: 10px;
+   justify-content: center;
+   border: 5px solid gray;
+   border-radius: 10px;
+   border-style: ridge;
+   display: inline-block;
+   flex-wrap: wrap;
+   select{
+     cursor: pointer;
+     margin-top:20px;
+     background: transparent;
+     border:0,5px;
+     font-size: 14px;
+     height: 30px;
+     padding: 5px;
+     width: 250px;
+    };
+    label{
+      margin-top:120px;
+    };
+    input{
+      background: transparent;
+      border:0,5px;
+    }
+    ",
+              ],
+              "staticRulesId": "",
+            },
+            "displayName": "styled.div",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-fzoLsD",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          },
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <Unknown
+              to="/edit">
+              <h4>
+                            You can create your ads
+              </h4>
+</Unknown>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": <h4>
+                You can create your ads
+</h4>,
+              "to": "/edit",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "You can create your ads",
+              },
+              "ref": null,
+              "rendered": "You can create your ads",
+              "type": "h4",
+            },
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "displayName": "Link",
+              "propTypes": Object {
+                "innerRef": [Function],
+                "onClick": [Function],
+                "replace": [Function],
+                "target": [Function],
+                "to": [Function],
+              },
+              "render": [Function],
+            },
+          },
+          "type": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "baseHash": 1028616872,
+              "componentId": "sc-fzpans",
+              "isStatic": false,
+              "rules": Array [
+                "
+    margin-top:90px;
+",
+              ],
+              "staticRulesId": "",
+            },
+            "displayName": "styled.div",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-fzpans",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          },
+        },
+      ],
+      "type": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": Array [],
+        "componentStyle": ComponentStyle {
+          "baseHash": 1882630949,
+          "componentId": "sc-AxheI",
+          "isStatic": false,
+          "rules": Array [
+            "
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+padding:10px;
+margin: 50px;
+max-height: 1000px;
+label{
+    display: block;
+    padding: 5px;
+};
+",
+          ],
+          "staticRulesId": "",
+        },
+        "displayName": "styled.div",
+        "foldedComponentIds": Array [],
+        "render": [Function],
+        "styledComponentId": "sc-AxheI",
+        "target": "div",
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      },
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    Symbol(enzyme.__providerValues__): undefined,
+  },
+  Symbol(enzyme.__providerValues__): Map {},
+  Symbol(enzyme.__childContext__): null,
+}
+`;

@@ -1,30 +1,11 @@
 /* eslint-disable */
 
 import React, { Component, Fragment } from 'react';
-//import { getAllAds } from '../../services/api';
 import { Card } from '../Cards/Cards';
 import { Link } from 'react-router-dom';
-import hocAllAds from '../../Hoc/fetchAllAds';
+import hocDetailsAds from '../../Hoc/fetchDetailsAds';
 
 class Details extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         result: [{}],
-    //     }
-    // }
-
-    // componentDidMount = async () => {
-    //     const idCards = this.props.location.id;
-    //     const { data } = await getAllAds();
-    //     const { results } = data;
-
-    //     results.map((item) => {
-    //         if (item._id === idCards) {
-    //             this.setState({ result: item });
-    //         }
-    //     })
-    // }
 
     render() {
         const { data: ads, id } = this.props;
@@ -51,4 +32,4 @@ class Details extends Component {
     }
 }
 
-export default hocAllAds()(Details);
+export default hocDetailsAds()(Details);

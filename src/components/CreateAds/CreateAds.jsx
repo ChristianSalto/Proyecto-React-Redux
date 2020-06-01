@@ -1,7 +1,6 @@
 /* eslint-disable */
 
 import React, { Component } from 'react';
-//import { editAds } from '../../services/api';
 import { DivContainerForm, DivContainerCreateAds, DivCheckbox } from './StyledCreateAds';
 import { Link } from 'react-router-dom';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -22,21 +21,6 @@ class CreateAds extends Component {
         const ads = createAdvert(event.target);
         const { createAds } = this.props;
         createAds(ads);
-        // const tags = [];
-        // const name = event.target.name.value;
-        // const price = parseInt(event.target.number.value);
-        // const description = event.target.description.value;
-        // tags.push(event.target.tags.value)
-        // const type = event.target.type.value;
-        // const photo = event.target.photo.value;
-        // const { data } = await editAds({
-        //     tags: tags,
-        //     name: name,
-        //     price: price,
-        //     description: description,
-        //     type: type,
-        //     photo: photo
-        // });
     }
 
     render() {

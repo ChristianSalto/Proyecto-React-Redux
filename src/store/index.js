@@ -26,16 +26,3 @@ export function configureStore() {
         return store;
     }
 }
-
-
-// const composedEnhancers = composeWithDevTools;
-
-
-// export function configureStore() {
-//     return {
-//         ...createStore(
-//             reducers,
-//             composedEnhancers(),
-//         )
-//     };
-// };

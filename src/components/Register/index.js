@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import Register from './Register';
-//import { getStateUser } from '../../store/selectors';
+
 
 import { userSession, loadSession } from '../../store/action';
 
@@ -13,10 +13,6 @@ function mapDispatchToProps(dispatch, ownProps) {
         loadSession: () => loadSession(dispatch),
     }
 }
-
-// const mapDispatchToProps = {
-//     userSession
-// }
 
 
 const connected = connect(null, mapDispatchToProps);

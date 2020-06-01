@@ -27,9 +27,10 @@ class Register extends Component {
   handleRegister = async (event) => {
     event.preventDefault();
     const { username, password } = event.target;
-    //  const { data } = await getRegister(username.value, password.value);
-    const data = {};
-    data.success = true;
+    const { data } = await getRegister(username.value, password.value);
+    // const data = {};
+    // data.success = true;
+    debugger
 
     if (data.success) {
       const user = saveUser(username.value, data.success);

@@ -19,10 +19,6 @@ function mapDispatchToProps(dispatch, ownProps) {
   };
 }
 
-// export const mapStateToProps = {
-//     mapStateToProps
-// }
-
 const connected = connect(mapStateToProps, mapDispatchToProps);
 const UserLogined = connected(Login);
 

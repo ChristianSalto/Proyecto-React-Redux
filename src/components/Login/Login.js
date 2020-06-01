@@ -61,33 +61,6 @@ class Login extends Component {
                 nameButton="I'm not registered"
                 value={this.state.username}
             />
-            // <Layout>
-            //     <form onSubmit={this.handleLogin} className="login-container">
-            //         <FieldTitle className="login-title"><h1>Login</h1></FieldTitle>
-            //         <FieldContainer className="input-login">
-            //             <label htmlFor="username">Username</label>
-            //             <Input type="text"
-            //                 name="username"
-            //                 className="login-input"
-            //                 placeholder="Username"
-            //                 defaultValue={this.state.username}
-            //                 required />
-            //         </FieldContainer>
-
-            //         <FieldContainer className="input-login">
-            //             <label htmlFor="password">Password</label>
-            //             <Input type="password" name="password" className="login-input" placeholder="Password" required />
-            //         </FieldContainer>
-            //         <FieldContainer>
-            //             <Button type="submit" className="login-btn">Login</Button>
-
-            //             <Link to="/">
-            //                 <Button secundary type="button">I'm not registered</Button>
-            //             </Link>
-            //         </FieldContainer>
-            //         <FieldError className="error">{this.state.error}</FieldError>
-            //     </form>
-            // </Layout>
         );
     }
 }

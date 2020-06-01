@@ -1,6 +1,6 @@
 export const getStateUser = (state) => state.user;
 export const getStateAds = (state) => state.ads;
-// export const getState = () => initialState;
+
 
 export const getLimit = () => 6;
 

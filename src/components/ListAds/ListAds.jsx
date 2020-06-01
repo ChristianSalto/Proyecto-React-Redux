@@ -14,12 +14,8 @@ class ListAds extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            // result: [{}],
             isChecked: true,
             price: "0",
-            //  limit: 6,
-            // msj: "",
-            // stateAvanced: true
         }
     }
 
@@ -30,51 +26,22 @@ class ListAds extends Component {
         if (getStateUser.length === 0) {
             loadSession();
         }
-        //const ads = getStateAds();
-        // console.log(...getStateAds)
-        // const { data } = await getAds();
-        // const { results } = data;
-        // this.setState({ result: results });
     }
-
-    // componentDidMount() {
-    //     this.props.handleAllAds();
-    // };
 
 
     showFields = (event) => {
         const field = event.target.value;
-        // const limit = 6;
         const filter = {
             fields: field,
         }
         const { filterAdvert, getLimit } = this.props;
         filterAdvert(filter, getLimit);
-
-        // const { data } = await filterAds({ fields: field }, this.state.limit);
-        // const { results } = data;
-        // this.setState({ result: results });
     }
 
     handleFilter = () => {
         const { name } = this.state;
-        //  const limit = 6;
         const { handleSearch, getLimit } = this.props;
         handleSearch(name, getLimit);
-
-        // const { data } = await filterAds({ name: name }, this.state.limit);
-        // const { results } = data;
-        // if (results.length === 0) {
-        //     const { data } = await filterAds({ tag: name }, this.state.limit);
-        //     const { results } = data;
-        //     if (results.length === 0) {
-        //         this.setState({ result: results, msj: "we are so sorry we don't have those ads" })
-        //     } else {
-        //         this.setState({ result: results, msj: "" });
-        //     }
-        // } else {
-        //     this.setState({ result: results, msj: "" });
-        // }
     }
 
 
@@ -91,9 +58,6 @@ class ListAds extends Component {
         }
         const { filterAdvert, getLimit } = this.props;
         filterAdvert(filter, getLimit);
-        // const { data } = await filterAds({ venta: this.state.isChecked }, this.state.limit);
-        // const { results } = data;
-        // this.setState({ result: results, msj: "" });
     }
 
     handleChangePrice = (event) => {
@@ -105,11 +69,6 @@ class ListAds extends Component {
         }
         const { filterAdvert, getLimit } = this.props;
         filterAdvert(filter, getLimit);
-
-        // const { data } = await filterAds({ price: `1 - ${value}` }, this.state.limit);
-        // const { results } = data;
-        // this.setState({ result: results, msj: "" });
-
     }
 
     showMeLimitCards = (event) => {

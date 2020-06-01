@@ -1,27 +1,12 @@
-//import * as axios from 'axios';
 import * as action from '../store/action';
 import * as TYPES from '../store/types';
-//import MockAdapter from 'axios-mock-adapter';
-//import * as api from '../services/api';
-import {
-  getAds,
-  filterAds,
-  getLogin,
-  getAllAds,
-  editAds,
-} from '../services/api';
-
-//console.log(axios);
-
-//jest.mock('axios');
+import { getAds } from '../services/api';
 
 jest.mock('../services/api', () => ({
   __esModule: true,
   default: 'mockedDefaultExport',
   getAds: jest.fn(),
 }));
-
-// jest.mock('../services/api');
 
 describe('actions', () => {
   describe('fetchRequest', () => {
@@ -144,11 +129,6 @@ describe('actions', () => {
         type: TYPES.FETCH_SUCCESS,
         success,
       });
-
-      // expect(dispatch).toHaveBeenCalledWith({
-      //   type: TYPES.FETCH_FAILURE,
-      //   error,
-      // });
     });
 
     test('should dispatch an FETCH_FAILURE action', async () => {
