@@ -71,7 +71,6 @@ export const getAdvert = (getLimit) => async (dispatch, getState) => {
   dispatch(fetchRequest());
   try {
     const { data } = await getAds(getLimit);
-    console.log(data)
     dispatch(fetchAds(data.results));
     dispatch(fetchSuccess(data.success));
   } catch (err) {
