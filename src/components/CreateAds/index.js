@@ -4,9 +4,9 @@ import CreateAds from './CreateAds';
 import { createAds } from '../../store/action';
 
 function mapDispatchToProps(dispatch, ownProps) {
-    return {
-        createAds: (ads) => createAds(dispatch, ads),
-    }
+  return {
+    createAds: (ads) => dispatch(createAds(ads)),
+  };
 }
 
 const connected = connect(null, mapDispatchToProps);

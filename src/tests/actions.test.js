@@ -1,4 +1,4 @@
-import * as axios from 'axios';
+//import * as axios from 'axios';
 import * as action from '../store/action';
 import * as TYPES from '../store/types';
 //import MockAdapter from 'axios-mock-adapter';
@@ -11,14 +11,17 @@ import {
   editAds,
 } from '../services/api';
 
-//console.log(MockAdapter);
+//console.log(axios);
 
-jest.mock('axios');
+//jest.mock('axios');
+
 jest.mock('../services/api', () => ({
   __esModule: true,
   default: 'mockedDefaultExport',
   getAds: jest.fn(),
 }));
+
+// jest.mock('../services/api');
 
 describe('actions', () => {
   // describe('fetchRequest', () => {
@@ -105,26 +108,44 @@ describe('actions', () => {
    */
 
   describe('getAdvert', () => {
-    const dispatch = jest.fn();
-    const error = '';
-    const ads = [];
-    const getLimit = 6;
-
     test('should dispatch an FETCH_REQUEST action', async () => {
-      await action.getAdvert(dispatch, getLimit);
-      const mock = new MockAdapter("axios");
-      
-      // getAds.mockImplementation(() => ads);
+      const getState = () => {};
+      const ad = {
+        data: {
+          results: [{}],
+          success: true,
+        },
+      };
 
-     console.log(getAds);
+      const getLimit = 6;
+      const dispatch = jest.fn();
+      const actions = action.getAdvert(getLimit);
+      getAds.mockImplementation(() => Promise.resolve(ad));
+
+      await actions(dispatch, getState);
 
       expect(dispatch).toHaveBeenCalledWith({
         type: TYPES.FETCH_REQUEST,
       });
 
-      // expect(getAds).toHaveBeenCalled();
-    
+      // await getAds(getLimit)
+      getAds(getLimit).then((data) => {
+        expect(data).toBe(ad);
+      });
 
+      const ads = ad.data.results;
+      const success = ad.data.success;
+
+      expect(dispatch).toHaveBeenCalledWith({
+        type: TYPES.FETCH_ADS,
+        ads,
+      });
+
+      expect(dispatch).toHaveBeenCalledWith({
+        type: TYPES.FETCH_SUCCESS,
+        success,
+      });
+      /// console.log(dispatch)
       // expect(dispatch).toHaveBeenCalledWith({
       //   type: TYPES.FETCH_ADS,
       //   ads,
@@ -135,5 +156,30 @@ describe('actions', () => {
       //   error,
       // });
     });
+
+    // test('prueba', async () => {
+
+    //   const getState = () => {};
+    //   const ads = {
+    //     data: {
+    //       results: [{}],
+    //       success: true,
+    //     },
+    //   };
+
+    //   //const ads = []
+    //   const getLimit = 6;
+    //   const dispatch = jest.fn();
+    //   const actions = action.getAdvert(getLimit);
+    //   getAds.mockImplementation(() => Promise.resolve(ads));
+
+    //   await actions(dispatch, getState);
+
+    //    expect(dispatch).toHaveBeenCalledWith({
+    //     type: TYPES.FETCH_ADS,
+    //     ads,
+    //   });
+
+    // });
   });
 });

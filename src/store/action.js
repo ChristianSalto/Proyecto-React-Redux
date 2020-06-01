@@ -44,12 +44,14 @@ export const fetchResultCreatAds = (result) => ({
   result,
 });
 
-export const loadSession = (dispatch) => {
+export const loadSession = () => (dispatch) => {
   const user = localStorage.getItem('user');
   user !== null ? dispatch(userSession(JSON.parse(user))) : user;
 };
 
-export const loadLogin = async (dispatch, username, password, { history }) => {
+export const loadLogin = (username, password, { history }) => async (
+  dispatch,
+) => {
   dispatch(fetchRequest());
   const { data } = await getLogin(username, password);
   if (data.success) {
@@ -65,10 +67,11 @@ export const loadLogin = async (dispatch, username, password, { history }) => {
   }
 };
 
-export const getAdvert = async (dispatch, getLimit) => {
+export const getAdvert = (getLimit) => async (dispatch, getState) => {
   dispatch(fetchRequest());
   try {
     const { data } = await getAds(getLimit);
+    console.log(data)
     dispatch(fetchAds(data.results));
     dispatch(fetchSuccess(data.success));
   } catch (err) {
@@ -76,9 +79,9 @@ export const getAdvert = async (dispatch, getLimit) => {
   }
 };
 
-export const filterAdvert = async (dispatch, filter, limit) => {
+export const filterAdvert = (filter, limit) => async (dispatch, getState) => {
   if (filter.fields === 'Fields') {
-    getAdvert(dispatch, limit);
+    dispatch(getAdvert(limit));
     return;
   }
   dispatch(fetchRequest());
@@ -91,7 +94,7 @@ export const filterAdvert = async (dispatch, filter, limit) => {
   }
 };
 
-export const handleSearch = async (dispatch, name, limit) => {
+export const handleSearch = (name, limit) => async (dispatch, getState) => {
   dispatch(fetchRequest());
   try {
     const { data } = await filterAds({ name: name }, limit);
@@ -118,7 +121,7 @@ export const handleSearch = async (dispatch, name, limit) => {
   }
 };
 
-export const handleAllAds = async (dispatch) => {
+export const handleAllAds = () => async (dispatch) => {
   dispatch(fetchRequest());
   try {
     const { data } = await getAllAds();
@@ -129,7 +132,7 @@ export const handleAllAds = async (dispatch) => {
   }
 };
 
-export const createAds = async (dispatch, ads) => {
+export const createAds = (ads) => async (dispatch) => {
   dispatch(fetchRequest());
   try {
     const { data } = await editAds(ads);
