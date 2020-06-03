@@ -26,17 +26,25 @@ ShallowWrapper {
                               </h2>
                     </label>
                     <div>
-                               
+                              <input
+                                        max="100000"
+                                        min="0"
+                                        name="priceMax"
+                                        onChange={undefined}
+                                        type="range" />
+                              <span>
+                                         $
+                              </span>
                               <input
                                         max="1000"
                                         min="0"
-                                        name="price"
+                                        name="priceMin"
                                         onChange={undefined}
                                         type="range" />
+                              <span>
+                                         $
+                              </span>
                     </div>
-                    <span>
-                               $
-                    </span>
           </div>
           <div>
                     <Unknown
@@ -99,8 +107,6 @@ ShallowWrapper {
                               You can see all the ads here !!!
                     </h4>
           </Unknown>
-</Unknown>,
-        <Unknown>
           <Unknown
                     to="/edit">
                     <h4>
@@ -126,17 +132,25 @@ ShallowWrapper {
                             </h2>
               </label>
               <div>
-                             
+                            <input
+                                          max="100000"
+                                          min="0"
+                                          name="priceMax"
+                                          onChange={undefined}
+                                          type="range" />
+                            <span>
+                                           $
+                            </span>
                             <input
                                           max="1000"
                                           min="0"
-                                          name="price"
+                                          name="priceMin"
                                           onChange={undefined}
                                           type="range" />
+                            <span>
+                                           $
+                            </span>
               </div>
-              <span>
-                             $
-              </span>
 </div>,
             <div>
               <Unknown
@@ -165,17 +179,25 @@ ShallowWrapper {
                   </h2>
 </label>,
                 <div>
-                   
+                  <input
+                                    max="100000"
+                                    min="0"
+                                    name="priceMax"
+                                    onChange={undefined}
+                                    type="range" />
+                  <span>
+                                     $
+                  </span>
                   <input
                                     max="1000"
                                     min="0"
-                                    name="price"
+                                    name="priceMin"
                                     onChange={undefined}
                                     type="range" />
+                  <span>
+                                     $
+                  </span>
 </div>,
-                <span>
-                   $
-</span>,
               ],
             },
             "ref": null,
@@ -210,26 +232,36 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": Array [
-                    " ",
+                    <input
+                      max="100000"
+                      min="0"
+                      name="priceMax"
+                      onChange={undefined}
+                      type="range" />,
+                    <span>
+                       $
+</span>,
                     <input
                       max="1000"
                       min="0"
-                      name="price"
+                      name="priceMin"
                       onChange={undefined}
                       type="range" />,
+                    <span>
+                       $
+</span>,
                   ],
                 },
                 "ref": null,
                 "rendered": Array [
-                  " ",
                   Object {
                     "instance": null,
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "max": "1000",
+                      "max": "100000",
                       "min": "0",
-                      "name": "price",
+                      "name": "priceMax",
                       "onChange": undefined,
                       "type": "range",
                     },
@@ -237,25 +269,57 @@ ShallowWrapper {
                     "rendered": null,
                     "type": "input",
                   },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        undefined,
+                        " $",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      undefined,
+                      " $",
+                    ],
+                    "type": "span",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "max": "1000",
+                      "min": "0",
+                      "name": "priceMin",
+                      "onChange": undefined,
+                      "type": "range",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        undefined,
+                        " $",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      undefined,
+                      " $",
+                    ],
+                    "type": "span",
+                  },
                 ],
                 "type": "div",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": Array [
-                    undefined,
-                    " $",
-                  ],
-                },
-                "ref": null,
-                "rendered": Array [
-                  undefined,
-                  " $",
-                ],
-                "type": "span",
               },
             ],
             "type": "div",
@@ -297,8 +361,8 @@ ShallowWrapper {
                     "isStatic": false,
                     "rules": Array [
                       "
-   margin-top: 150px;
-   font-size: 20px;
+  margin-top: 150px;
+  font-size: 20px;
 ",
                     ],
                     "staticRulesId": "",
@@ -333,10 +397,10 @@ ShallowWrapper {
                     "isStatic": false,
                     "rules": Array [
                       "
-   width: 20px; 
-   height: 20px; 
-   cursor: pointer;
- ",
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+",
                     ],
                     "staticRulesId": "",
                   },
@@ -363,27 +427,31 @@ ShallowWrapper {
             "isStatic": false,
             "rules": Array [
               "
-justify-content: center;
-border: 5px solid gray;
-border-style: ridge;
-border-radius: 10px;
-display: inline-block;
-flex-wrap: wrap;
-padding: 10px;
-margin: 20px;
-width:65%;
-div{ 
-  margin-top: 50px;
+  justify-content: center;
+  border: 5px solid gray;
+  border-style: ridge;
+  margin: 10px;
+  border-radius: 10px;
+  display: inline-block;
+  flex-wrap: wrap;
   padding: 10px;
-  div{
-    height:8px;
-    background:gray;
-        input{
-          margin-top: -30px;
-            cursor: pointer;
-        };
-      };
-};
+  width: 45%;
+  div {
+    padding: 10px;
+    div {
+      input {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 25px;
+        background: gray;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: 0.2s;
+        transition: opacity 0.2s;
+        cursor: pointer;
+      }
+    }
+  }
 ",
             ],
             "staticRulesId": "",
@@ -451,6 +519,12 @@ div{
               to="/seeAllAds">
               <h4>
                             You can see all the ads here !!!
+              </h4>
+</Unknown>,
+            <Unknown
+              to="/edit">
+              <h4>
+                            You can create your ads
               </h4>
 </Unknown>,
           ],
@@ -654,6 +728,41 @@ div{
               "render": [Function],
             },
           },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": <h4>
+                You can create your ads
+</h4>,
+              "to": "/edit",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "You can create your ads",
+              },
+              "ref": null,
+              "rendered": "You can create your ads",
+              "type": "h4",
+            },
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "displayName": "Link",
+              "propTypes": Object {
+                "innerRef": [Function],
+                "onClick": [Function],
+                "replace": [Function],
+                "target": [Function],
+                "to": [Function],
+              },
+              "render": [Function],
+            },
+          },
         ],
         "type": Object {
           "$$typeof": Symbol(react.forward_ref),
@@ -664,102 +773,32 @@ div{
             "isStatic": false,
             "rules": Array [
               "
-   padding: 10px;
-   justify-content: center;
-   border: 5px solid gray;
-   border-radius: 10px;
-   border-style: ridge;
-   display: inline-block;
-   flex-wrap: wrap;
-   select{
-     cursor: pointer;
-     margin-top:20px;
-     background: transparent;
-     border:0,5px;
-     font-size: 14px;
-     height: 30px;
-     padding: 5px;
-     width: 250px;
-    };
-    label{
-      margin-top:120px;
-    };
-    input{
-      background: transparent;
-      border:0,5px;
-    }
-    ",
-            ],
-            "staticRulesId": "",
-          },
-          "displayName": "styled.div",
-          "foldedComponentIds": Array [],
-          "render": [Function],
-          "styledComponentId": "sc-fzoLsD",
-          "target": "div",
-          "toString": [Function],
-          "warnTooManyClasses": [Function],
-          "withComponent": [Function],
-        },
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "children": <Unknown
-            to="/edit">
-            <h4>
-                        You can create your ads
-            </h4>
-</Unknown>,
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "children": <h4>
-              You can create your ads
-</h4>,
-            "to": "/edit",
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "You can create your ads",
-            },
-            "ref": null,
-            "rendered": "You can create your ads",
-            "type": "h4",
-          },
-          "type": Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "displayName": "Link",
-            "propTypes": Object {
-              "innerRef": [Function],
-              "onClick": [Function],
-              "replace": [Function],
-              "target": [Function],
-              "to": [Function],
-            },
-            "render": [Function],
-          },
-        },
-        "type": Object {
-          "$$typeof": Symbol(react.forward_ref),
-          "attrs": Array [],
-          "componentStyle": ComponentStyle {
-            "baseHash": 1028616872,
-            "componentId": "sc-fzpans",
-            "isStatic": false,
-            "rules": Array [
-              "
-    margin-top:90px;
+  margin: 10px;
+  padding: 10px;
+  justify-content: center;
+  border: 5px solid gray;
+  border-radius: 10px;
+  border-style: ridge;
+  display: inline-block;
+  flex-wrap: wrap;
+  width: 45%;
+  select {
+    cursor: pointer;
+    margin-top: 20px;
+    background: transparent;
+    border: 0, 5px;
+    font-size: 14px;
+    height: 30px;
+    padding: 5px;
+    width: 250px;
+  }
+  label {
+    margin-top: 120px;
+  }
+  input {
+    background: transparent;
+    border: 0, 5px;
+  }
 ",
             ],
             "staticRulesId": "",
@@ -767,7 +806,7 @@ div{
           "displayName": "styled.div",
           "foldedComponentIds": Array [],
           "render": [Function],
-          "styledComponentId": "sc-fzpans",
+          "styledComponentId": "sc-fzoLsD",
           "target": "div",
           "toString": [Function],
           "warnTooManyClasses": [Function],
@@ -784,16 +823,16 @@ div{
         "isStatic": false,
         "rules": Array [
           "
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-padding:10px;
-margin: 50px;
-max-height: 1000px;
-label{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  width: 100%;
+
+  label {
     display: block;
     padding: 5px;
-};
+  }
 ",
         ],
         "staticRulesId": "",
@@ -824,17 +863,25 @@ label{
                                     </h2>
                         </label>
                         <div>
-                                     
+                                    <input
+                                                max="100000"
+                                                min="0"
+                                                name="priceMax"
+                                                onChange={undefined}
+                                                type="range" />
+                                    <span>
+                                                 $
+                                    </span>
                                     <input
                                                 max="1000"
                                                 min="0"
-                                                name="price"
+                                                name="priceMin"
                                                 onChange={undefined}
                                                 type="range" />
+                                    <span>
+                                                 $
+                                    </span>
                         </div>
-                        <span>
-                                     $
-                        </span>
             </div>
             <div>
                         <Unknown
@@ -897,8 +944,6 @@ label{
                                     You can see all the ads here !!!
                         </h4>
             </Unknown>
-</Unknown>,
-          <Unknown>
             <Unknown
                         to="/edit">
                         <h4>
@@ -924,17 +969,25 @@ label{
                                 </h2>
                 </label>
                 <div>
-                                 
+                                <input
+                                                max="100000"
+                                                min="0"
+                                                name="priceMax"
+                                                onChange={undefined}
+                                                type="range" />
+                                <span>
+                                                 $
+                                </span>
                                 <input
                                                 max="1000"
                                                 min="0"
-                                                name="price"
+                                                name="priceMin"
                                                 onChange={undefined}
                                                 type="range" />
+                                <span>
+                                                 $
+                                </span>
                 </div>
-                <span>
-                                 $
-                </span>
 </div>,
               <div>
                 <Unknown
@@ -963,17 +1016,25 @@ label{
                     </h2>
 </label>,
                   <div>
-                     
+                    <input
+                                        max="100000"
+                                        min="0"
+                                        name="priceMax"
+                                        onChange={undefined}
+                                        type="range" />
+                    <span>
+                                         $
+                    </span>
                     <input
                                         max="1000"
                                         min="0"
-                                        name="price"
+                                        name="priceMin"
                                         onChange={undefined}
                                         type="range" />
+                    <span>
+                                         $
+                    </span>
 </div>,
-                  <span>
-                     $
-</span>,
                 ],
               },
               "ref": null,
@@ -1008,26 +1069,36 @@ label{
                   "nodeType": "host",
                   "props": Object {
                     "children": Array [
-                      " ",
+                      <input
+                        max="100000"
+                        min="0"
+                        name="priceMax"
+                        onChange={undefined}
+                        type="range" />,
+                      <span>
+                         $
+</span>,
                       <input
                         max="1000"
                         min="0"
-                        name="price"
+                        name="priceMin"
                         onChange={undefined}
                         type="range" />,
+                      <span>
+                         $
+</span>,
                     ],
                   },
                   "ref": null,
                   "rendered": Array [
-                    " ",
                     Object {
                       "instance": null,
                       "key": undefined,
                       "nodeType": "host",
                       "props": Object {
-                        "max": "1000",
+                        "max": "100000",
                         "min": "0",
-                        "name": "price",
+                        "name": "priceMax",
                         "onChange": undefined,
                         "type": "range",
                       },
@@ -1035,25 +1106,57 @@ label{
                       "rendered": null,
                       "type": "input",
                     },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          undefined,
+                          " $",
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        undefined,
+                        " $",
+                      ],
+                      "type": "span",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "max": "1000",
+                        "min": "0",
+                        "name": "priceMin",
+                        "onChange": undefined,
+                        "type": "range",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "input",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          undefined,
+                          " $",
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        undefined,
+                        " $",
+                      ],
+                      "type": "span",
+                    },
                   ],
                   "type": "div",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": Array [
-                      undefined,
-                      " $",
-                    ],
-                  },
-                  "ref": null,
-                  "rendered": Array [
-                    undefined,
-                    " $",
-                  ],
-                  "type": "span",
                 },
               ],
               "type": "div",
@@ -1095,8 +1198,8 @@ label{
                       "isStatic": false,
                       "rules": Array [
                         "
-   margin-top: 150px;
-   font-size: 20px;
+  margin-top: 150px;
+  font-size: 20px;
 ",
                       ],
                       "staticRulesId": "",
@@ -1131,10 +1234,10 @@ label{
                       "isStatic": false,
                       "rules": Array [
                         "
-   width: 20px; 
-   height: 20px; 
-   cursor: pointer;
- ",
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+",
                       ],
                       "staticRulesId": "",
                     },
@@ -1161,27 +1264,31 @@ label{
               "isStatic": false,
               "rules": Array [
                 "
-justify-content: center;
-border: 5px solid gray;
-border-style: ridge;
-border-radius: 10px;
-display: inline-block;
-flex-wrap: wrap;
-padding: 10px;
-margin: 20px;
-width:65%;
-div{ 
-  margin-top: 50px;
+  justify-content: center;
+  border: 5px solid gray;
+  border-style: ridge;
+  margin: 10px;
+  border-radius: 10px;
+  display: inline-block;
+  flex-wrap: wrap;
   padding: 10px;
-  div{
-    height:8px;
-    background:gray;
-        input{
-          margin-top: -30px;
-            cursor: pointer;
-        };
-      };
-};
+  width: 45%;
+  div {
+    padding: 10px;
+    div {
+      input {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 25px;
+        background: gray;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: 0.2s;
+        transition: opacity 0.2s;
+        cursor: pointer;
+      }
+    }
+  }
 ",
               ],
               "staticRulesId": "",
@@ -1249,6 +1356,12 @@ div{
                 to="/seeAllAds">
                 <h4>
                                 You can see all the ads here !!!
+                </h4>
+</Unknown>,
+              <Unknown
+                to="/edit">
+                <h4>
+                                You can create your ads
                 </h4>
 </Unknown>,
             ],
@@ -1452,6 +1565,41 @@ div{
                 "render": [Function],
               },
             },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": <h4>
+                  You can create your ads
+</h4>,
+                "to": "/edit",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "You can create your ads",
+                },
+                "ref": null,
+                "rendered": "You can create your ads",
+                "type": "h4",
+              },
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "displayName": "Link",
+                "propTypes": Object {
+                  "innerRef": [Function],
+                  "onClick": [Function],
+                  "replace": [Function],
+                  "target": [Function],
+                  "to": [Function],
+                },
+                "render": [Function],
+              },
+            },
           ],
           "type": Object {
             "$$typeof": Symbol(react.forward_ref),
@@ -1462,102 +1610,32 @@ div{
               "isStatic": false,
               "rules": Array [
                 "
-   padding: 10px;
-   justify-content: center;
-   border: 5px solid gray;
-   border-radius: 10px;
-   border-style: ridge;
-   display: inline-block;
-   flex-wrap: wrap;
-   select{
-     cursor: pointer;
-     margin-top:20px;
-     background: transparent;
-     border:0,5px;
-     font-size: 14px;
-     height: 30px;
-     padding: 5px;
-     width: 250px;
-    };
-    label{
-      margin-top:120px;
-    };
-    input{
-      background: transparent;
-      border:0,5px;
-    }
-    ",
-              ],
-              "staticRulesId": "",
-            },
-            "displayName": "styled.div",
-            "foldedComponentIds": Array [],
-            "render": [Function],
-            "styledComponentId": "sc-fzoLsD",
-            "target": "div",
-            "toString": [Function],
-            "warnTooManyClasses": [Function],
-            "withComponent": [Function],
-          },
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "children": <Unknown
-              to="/edit">
-              <h4>
-                            You can create your ads
-              </h4>
-</Unknown>,
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "children": <h4>
-                You can create your ads
-</h4>,
-              "to": "/edit",
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "You can create your ads",
-              },
-              "ref": null,
-              "rendered": "You can create your ads",
-              "type": "h4",
-            },
-            "type": Object {
-              "$$typeof": Symbol(react.forward_ref),
-              "displayName": "Link",
-              "propTypes": Object {
-                "innerRef": [Function],
-                "onClick": [Function],
-                "replace": [Function],
-                "target": [Function],
-                "to": [Function],
-              },
-              "render": [Function],
-            },
-          },
-          "type": Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "attrs": Array [],
-            "componentStyle": ComponentStyle {
-              "baseHash": 1028616872,
-              "componentId": "sc-fzpans",
-              "isStatic": false,
-              "rules": Array [
-                "
-    margin-top:90px;
+  margin: 10px;
+  padding: 10px;
+  justify-content: center;
+  border: 5px solid gray;
+  border-radius: 10px;
+  border-style: ridge;
+  display: inline-block;
+  flex-wrap: wrap;
+  width: 45%;
+  select {
+    cursor: pointer;
+    margin-top: 20px;
+    background: transparent;
+    border: 0, 5px;
+    font-size: 14px;
+    height: 30px;
+    padding: 5px;
+    width: 250px;
+  }
+  label {
+    margin-top: 120px;
+  }
+  input {
+    background: transparent;
+    border: 0, 5px;
+  }
 ",
               ],
               "staticRulesId": "",
@@ -1565,7 +1643,7 @@ div{
             "displayName": "styled.div",
             "foldedComponentIds": Array [],
             "render": [Function],
-            "styledComponentId": "sc-fzpans",
+            "styledComponentId": "sc-fzoLsD",
             "target": "div",
             "toString": [Function],
             "warnTooManyClasses": [Function],
@@ -1582,16 +1660,16 @@ div{
           "isStatic": false,
           "rules": Array [
             "
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-padding:10px;
-margin: 50px;
-max-height: 1000px;
-label{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  width: 100%;
+
+  label {
     display: block;
     padding: 5px;
-};
+  }
 ",
           ],
           "staticRulesId": "",

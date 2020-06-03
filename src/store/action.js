@@ -85,6 +85,7 @@ export const filterAdvert = (filter, limit) => async (dispatch, getState) => {
   }
   dispatch(fetchRequest());
   try {
+    console.log(filter)
     const { data } = await filterAds(filter, limit);
     dispatch(fetchAds(data.results));
     dispatch(fetchSuccess(data.success));
