@@ -5,6 +5,7 @@ import {
   getAds,
   filterAds,
   getLogin,
+  getRegister,
   getAllAds,
   editAds,
 } from '../services/api';
@@ -19,24 +20,22 @@ export const fetchFailure = (error) => ({
   error,
 });
 
-export const fetchSuccess = (success) => ({
+export const fetchSuccess = (data) => ({
   type: TYPES.FETCH_SUCCESS,
-  success,
+  data,
 });
 
-export const fetchAds = (ads) => ({
-  type: TYPES.FETCH_ADS,
-  ads,
-});
+
 
 export const msjAds = (msj) => ({
   type: TYPES.MSJ_ADS,
   msj,
 });
 
-export const userSession = (user) => ({
+export const userSession = (user, ads) => ({
   type: TYPES.USER_SESSION,
   user,
+  ads,
 });
 
 export const fetchResultCreatAds = (result) => ({
@@ -44,9 +43,18 @@ export const fetchResultCreatAds = (result) => ({
   result,
 });
 
-export const loadSession = () => (dispatch) => {
-  const user = localStorage.getItem('user');
-  user !== null ? dispatch(userSession(JSON.parse(user))) : user;
+
+
+export const loadRegister = (username, password) => async (dispatch) => {
+  dispatch(fetchRequest());
+  const { data } = await getRegister(username, password);
+  if (data.success) {
+    dispatch(fetchSuccess(data));
+    return data;
+  } else {
+    dispatch(fetchFailure(data.error));
+    return data;
+  }
 };
 
 export const loadLogin = (username, password, { history }) => async (
@@ -58,8 +66,7 @@ export const loadLogin = (username, password, { history }) => async (
     const user = saveUser(username, data.success);
     dispatch(userSession(user));
     localStorage.setItem('user', JSON.stringify(user));
-    localStorage.setItem('success', data.success);
-    dispatch(fetchSuccess(data.success));
+    dispatch(fetchSuccess(data));
     history.push('/listAds');
   } else {
     dispatch(fetchFailure(data.error));
@@ -71,8 +78,7 @@ export const getAdvert = (getLimit) => async (dispatch, getState) => {
   dispatch(fetchRequest());
   try {
     const { data } = await getAds(getLimit);
-    dispatch(fetchAds(data.results));
-    dispatch(fetchSuccess(data.success));
+    dispatch(fetchSuccess(data));
   } catch (err) {
     dispatch(fetchFailure(err));
   }
@@ -85,10 +91,8 @@ export const filterAdvert = (filter, limit) => async (dispatch, getState) => {
   }
   dispatch(fetchRequest());
   try {
-    console.log(filter)
     const { data } = await filterAds(filter, limit);
-    dispatch(fetchAds(data.results));
-    dispatch(fetchSuccess(data.success));
+    dispatch(fetchSuccess(data));
   } catch (err) {
     dispatch(fetchFailure(err));
   }
@@ -103,17 +107,14 @@ export const handleSearch = (name, limit) => async (dispatch, getState) => {
       const { data } = await filterAds({ tag: name }, limit);
       const { results } = data;
       if (results.length === 0) {
-        dispatch(fetchAds(results));
-        dispatch(fetchSuccess(data.success));
+        dispatch(fetchSuccess(data));
         dispatch(msjAds("we are so sorry we don't have those ads"));
       } else {
-        dispatch(fetchAds(results));
-        dispatch(fetchSuccess(data.success));
+        dispatch(fetchSuccess(data));
         dispatch(msjAds(''));
       }
     } else {
-      dispatch(fetchAds(results));
-      dispatch(fetchSuccess(data.success));
+      dispatch(fetchSuccess(data));
       dispatch(msjAds(''));
     }
   } catch (err) {
@@ -125,8 +126,8 @@ export const handleAllAds = () => async (dispatch) => {
   dispatch(fetchRequest());
   try {
     const { data } = await getAllAds();
-    dispatch(fetchAds(data.results));
-    dispatch(fetchSuccess(data.success));
+    dispatch(fetchSuccess(data));
+    return data.results;
   } catch (err) {
     dispatch(fetchFailure(err));
   }
@@ -136,7 +137,7 @@ export const createAds = (ads) => async (dispatch) => {
   dispatch(fetchRequest());
   try {
     const { data } = await editAds(ads);
-    dispatch(fetchSuccess(data.success));
+    dispatch(fetchSuccess(data));
     dispatch(fetchResultCreatAds(data.result));
   } catch (err) {
     dispatch(fetchFailure(err));

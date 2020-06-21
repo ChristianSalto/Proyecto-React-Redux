@@ -29,12 +29,12 @@ class ListAds extends Component {
   }
 
   componentDidMount() {
-    const { fetchAds, getStateUser, loadSession, getLimit } = this.props;
+    const { fetchAds, getLimit } = this.props;
     fetchAds(getLimit);
-    getStateUser;
-    if (getStateUser.length === 0) {
-      loadSession();
-    }
+    // getStateUser;
+    // if (getStateUser.length === 0) {
+    //   loadSession();
+    // }
   }
 
   showFields = (event) => {
@@ -93,7 +93,9 @@ class ListAds extends Component {
   };
 
   clearCookies = () => {
-    localStorage.removeItem('success');
+    const { cleanSession } = this.props;
+    localStorage.removeItem('user');
+    cleanSession({ user: '', registered: false }, { ads: [] });
   };
 
   handleKeyUp = (event) => {
@@ -148,7 +150,7 @@ class ListAds extends Component {
 
 ListAds.propTypes = {
   fetchAds: T.func.isRequired,
-  loadSession: T.func.isRequired,
+  //loadSession: T.func.isRequired,
   getLimit: T.number,
 };
 

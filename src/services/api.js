@@ -1,8 +1,8 @@
 import axios from 'axios';
 const URL = 'http://34.89.93.186:8080/';
 
-export const getRegister = async (name, pass) => {
-    return await axios.post(`${URL}apiv1/register`, {
+export const getRegister = (name, pass) => {
+    return axios.post(`${URL}apiv1/register`, {
         username: name,
         password: pass
     }).then(response => {
@@ -13,8 +13,8 @@ export const getRegister = async (name, pass) => {
     });
 };
 
-export const getLogin = async (name, pass) => {
-    return await axios.post(`${URL}apiv1/login`, {
+export const getLogin = (name, pass) => {
+    return axios.post(`${URL}apiv1/login`, {
         username: name,
         password: pass
     }, { withCredentials: true })
@@ -26,8 +26,8 @@ export const getLogin = async (name, pass) => {
         });
 };
 
-export const getAds = async (limit) => {
-    return await axios.get(`${URL}apiv1/anuncios?limit=${limit}`, {
+export const getAds = (limit) => {
+    return axios.get(`${URL}apiv1/anuncios?limit=${limit}`, {
         withCredentials: true
     }
     ).then(response => {
@@ -38,20 +38,19 @@ export const getAds = async (limit) => {
     });
 };
 
-export const getAllAds = async () => {
-    return await axios.get(`${URL}apiv1/anuncios?`, {
+export const getAllAds = () => {
+    return axios.get(`${URL}apiv1/anuncios?`, {
         withCredentials: true
     }
     ).then(response => {
         return response;
     }).catch(error => {
-        console.log(error);
         return error;
     });
 };
 
-export const filterAds = async (params, number) => {
-    return await axios.get(`${URL}apiv1/anuncios?limit=${number}`, {
+export const filterAds = (params, number) => {
+    return axios.get(`${URL}apiv1/anuncios?limit=${number}`, {
         withCredentials: true,
         params: params
     }
@@ -67,34 +66,17 @@ export const filterAds = async (params, number) => {
 };
 
 
-// export const filterAdsAdvanced = async (params) => {
-//     return await axios.get(`${URL}apiv1/anuncios?`, {
-//         withCredentials: true,
-//         params: params
-//     }
-//     ).then(response => {
-//         return response;
-//     }).catch(error => {
-//         if (error.response.status === 422) {
-//             return getAllAds();
-//         } else {
-//             return error;
-//         }
-//     });
-// };
 
-
-export const editAds = async (params) => {
-    return await axios.post(`${URL}apiv1/anuncios?`, params, {
+export const editAds = (params) => {
+    return axios.post(`${URL}apiv1/anuncios?`, params, {
         withCredentials: true
     }
     ).then(response => {
         return response;
     }).catch(error => {
-        console.log(error);
         return error;
     });
 }
 
-export default { getRegister, getLogin, getAds, editAds };
+
 

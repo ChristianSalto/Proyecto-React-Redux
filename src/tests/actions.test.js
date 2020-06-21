@@ -31,27 +31,15 @@ describe('actions', () => {
 
   describe('fetchSuccess', () => {
     test('should create one FETCH_SUCCESS action with success', () => {
-      const success = true;
+      const data = {
+        success: true,
+      };
+      //const { success } = data;
       const expectAction = {
         type: TYPES.FETCH_SUCCESS,
-        success,
+        data,
       };
-      expect(action.fetchSuccess(success)).toEqual(expectAction);
-      expect(action.fetchSuccess(success)).toEqual({
-        success: true,
-        type: 'FETCH_SUCCESS',
-      });
-    });
-  });
-
-  describe('fetchAds', () => {
-    test('should create one FETCH_ADS action with ads', () => {
-      const ads = [];
-      const expectAction = {
-        type: TYPES.FETCH_ADS,
-        ads,
-      };
-      expect(action.fetchAds(ads)).toEqual(expectAction);
+      expect(action.fetchSuccess(data)).toEqual(expectAction);
     });
   });
 
@@ -120,15 +108,15 @@ describe('actions', () => {
       const ads = ad.data.results;
       const success = ad.data.success;
 
-      expect(dispatch).toHaveBeenCalledWith({
-        type: TYPES.FETCH_ADS,
-        ads,
-      });
+      // expect(dispatch).toHaveBeenCalledWith({
+      //   type: TYPES.FETCH_SUCCESS,
+      //   ads,
+      // });
 
-      expect(dispatch).toHaveBeenCalledWith({
-        type: TYPES.FETCH_SUCCESS,
-        success,
-      });
+      // expect(dispatch).toHaveBeenCalledWith({
+      //   type: TYPES.FETCH_SUCCESS,
+      //   success,
+      // });
     });
 
     test('should dispatch an FETCH_FAILURE action', async () => {

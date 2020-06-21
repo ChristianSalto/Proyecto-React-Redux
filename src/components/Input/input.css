@@ -1,0 +1,11 @@
+.input {
+    border       : none;
+    outline      : none;
+    border-bottom: 2px solid #63695D;
+    transition   : ease-in-out, background-color .35s ease-in-out;
+
+}
+
+.input:focus {
+    background-color: #E6D5D3;
+}

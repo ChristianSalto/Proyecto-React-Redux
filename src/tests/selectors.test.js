@@ -25,38 +25,17 @@ describe('selectors', () => {
     };
 
     const crateAds = {
-      name: {
-        value: 'botas',
-      },
-      number: {
-        value: '20',
-      },
-      description: {
-        value: 'botas de trabajo',
-      },
-      type: {
-        value: 'buy',
-      },
-      photo: {
-        value: 'no-photo',
-      },
+      name: 'botas',
 
-      work: {
-        value: 'work',
-        checked: true,
-      },
-      motor: {
-        value: 'motor',
-        checked: false,
-      },
-      lifestyle: {
-        value: 'lifestyle',
-        checked: false,
-      },
-      mobile: {
-        value: 'mobile',
-        checked: false,
-      },
+      number: '20',
+
+      description: 'botas de trabajo',
+
+      type: 'buy',
+
+      photo: 'no-photo',
+
+      tags: ['work'],
     };
     expect(selectors.createAdvert(crateAds)).toEqual(ads);
   });

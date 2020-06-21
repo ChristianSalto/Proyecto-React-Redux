@@ -3,26 +3,33 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import * as reducers from './reducers';
 import ReduxThunk from 'redux-thunk';
 import ReduxLogger from 'redux-logger';
+import { connectRouter } from 'connected-react-router';
 
 
-const createCombine = () => combineReducers({ ...reducers });
+const createRootReducer = (history) => combineReducers({
+    router: connectRouter(history),
+    ...reducers
+});
 
+//const reducer = combineReducers(reducers);
 const composedEnhancers = composeWithDevTools;
 
-const configureMiddleware = () => {
-    const middlewares = [ReduxThunk, ReduxLogger];
+const configureMiddleware = config => {
+    const middlewares = [ReduxThunk.withExtraArgument(config), ReduxLogger];
     return middlewares;
-};
+}
 
-export function configureStore() {
+
+export function configureStore(config) {
     return function (preloadedState) {
-        const reducers = createCombine()
-        const middleware = configureMiddleware();
+       // console.log(preloadedState)
+        const reducer = createRootReducer(config.history)
+        const middlewares = configureMiddleware(config);
         const store = createStore(
-            reducers,
+            reducer,
             preloadedState,
-            composedEnhancers(applyMiddleware(...middleware)),
+            composedEnhancers(applyMiddleware(...middlewares))
         );
         return store;
-    }
+    };
 }

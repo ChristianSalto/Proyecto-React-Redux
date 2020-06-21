@@ -1,85 +1,33 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import T from 'prop-types';
 
-import {
-  Button,
-  Layout,
-  Input,
-  FieldContainer,
-  FieldTitle,
-  FieldError,
-} from './StyleRegister';
+export const formContext = React.createContext();
+const { Provider: FormContextProvider } = formContext;
 
-const Form = ({ handleForm, name, path, error, color, nameButton, value }) => {
-  const [data, setDatas] = useState({
-    username: '',
-    password: '',
-  });
+const Form = ({ initialValue, onSubmit, children, ...props }) => {
+  const [value, setValue] = useState(initialValue);
 
-  const handleInputChange = (event) => {
-    const { value, name, password } = event.target;
-   
-    setDatas({
-      ...data,
-      [name]: value,
-      [password]: value,
-    });
+  const handleChange = (event) => {
+    setValue({ ...value, [event.target.name]: event.target.value });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    for (let i of event.target) {
+      if (i.checked) {
+        setValue((value[i.name] = [...value[i.name], i.value]));
+      }
+    }
+    onSubmit(value);
   };
 
   return (
-    <Layout>
-      <form onSubmit={handleForm}>
-        <FieldTitle>
-          <h1>{name}</h1>
-        </FieldTitle>
-        <FieldContainer>
-          <label htmlFor="username">Username</label>
-          <Input
-            placeholder="username"
-            type="text"
-            name="username"
-            onChange={handleInputChange}
-            defaultValue={value}
-            required
-          />
-        </FieldContainer>
-
-        <FieldContainer>
-          <label htmlFor="password">Password</label>
-          <Input
-            placeholder="password"
-            type="password"
-            name="password"
-            onChange={handleInputChange}
-            required
-          />
-        </FieldContainer>
-        <FieldContainer>
-          <Button primary={color} type="submit">
-            {name}
-          </Button>
-          <Link to={path}>
-            <Button secundary={color} type="button">
-              {nameButton}
-            </Button>
-          </Link>
-        </FieldContainer>
-        <FieldError className="error">{error}</FieldError>
+    <FormContextProvider value={{ value, handleChange }}>
+      <form onSubmit={handleSubmit} {...props}>
+        {children}
       </form>
-    </Layout>
+    </FormContextProvider>
   );
 };
 
-Form.propTypes = {
-  handleForm: T.func.isRequired,
-  error: T.string.isRequired,
-  name: T.string.isRequired,
-  path: T.string.isRequired,
-  color: T.string.isRequired,
-  nameButton: T.string.isRequired,
-  value: T.string,
-  msj: T.string,
-};
-
 export default Form;
+

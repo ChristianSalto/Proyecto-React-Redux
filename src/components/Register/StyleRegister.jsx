@@ -17,15 +17,15 @@ export const Button = styled.button`
   }
 `;
 
-export const Input = styled.input`
-  border: none;
-  outline: none;
-  border-bottom: 2px solid #63695D;
-  transition: ease-in-out, background-color .35s ease-in-out;
-  :focus{
-    background-color: #E6D5D3;
-  }
-`;
+// export const InputStyle = styled.input`
+//   border: none;
+//   outline: none;
+//   border-bottom: 2px solid #63695D;
+//   transition: ease-in-out, background-color .35s ease-in-out;
+//   :focus{
+//     background-color: #E6D5D3;
+//   }
+// `;
 
 export const Layout = styled.div`
   display: flex;

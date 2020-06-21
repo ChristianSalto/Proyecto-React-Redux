@@ -4,8 +4,8 @@ import ListAds from './ListAds';
 import {
   getAdvert,
   filterAdvert,
-  loadSession,
   handleSearch,
+  userSession,
 } from '../../store/action';
 import { getStateAds, getStateUser, getLimit } from '../../store/selectors';
 
@@ -21,7 +21,7 @@ function mapDispatchToProps(dispatch, ownProps) {
   return {
     fetchAds: (getLimit) => dispatch(getAdvert(getLimit)),
     filterAdvert: (field, limit) => dispatch(filterAdvert(field, limit)),
-    loadSession: () => dispatch(loadSession()),
+    cleanSession: (user, ads) => dispatch(userSession(user, ads)),
     handleSearch: (name, limit) => dispatch(handleSearch(name, limit)),
   };
 }

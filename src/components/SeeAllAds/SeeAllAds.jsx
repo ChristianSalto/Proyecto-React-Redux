@@ -1,10 +1,10 @@
 /* eslint-disable */
 
 import React, { useEffect, useState } from 'react';
-import { getAllAds } from '../../services/api';
+
 import Cards from '../Cards/Cards';
 import { Link } from 'react-router-dom';
-import { DivContainerAllAds, DivHome, DivRanger } from './styledSeeAllAds';
+import { DivContainerAllAds, DivHome } from './styledSeeAllAds';
 import T from 'prop-types';
 
 function SeeAllAds({ fetchAllAds }) {
@@ -12,9 +12,7 @@ function SeeAllAds({ fetchAllAds }) {
 
   useEffect(() => {
     const getAds = async () => {
-      fetchAllAds();
-      const { data } = await getAllAds();
-      const { results } = data;
+     const results = await fetchAllAds();
       setAds(results);
     };
 
@@ -32,7 +30,6 @@ function SeeAllAds({ fetchAllAds }) {
     </DivContainerAllAds>
   );
 }
-
 
 SeeAllAds.propTypes = {
   fetchAllAd: T.func,
